@@ -1,25 +1,12 @@
-import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader";
-
-export const metadata: Metadata = {
-  title: "JUMVI | Kosullar",
-  description: "JUMVI hizmet kosullari.",
-};
+import { t } from "@/lib/i18n";
 
 export default function TermsPage() {
   return (
-    <div>
-      <PageHeader title="Kosullar" subtitle="Her siparis icin sade ve seffaf kosullar." />
-      <section className="section-pad">
-        <div className="mx-auto max-w-3xl space-y-4 text-sm text-brand-ink/70">
-          <p>
-            JUMVI satin aldiginizda, bu sitede belirtilen odeme, gonderim ve iade kosullarini kabul etmis olursunuz.
-          </p>
-          <p>
-            Sorulariniz icin support@jumvi.co adresine yazabilirsiniz.
-          </p>
-        </div>
-      </section>
-    </div>
+    <main className="section-pad">
+      <div className="mx-auto max-w-3xl space-y-4">
+        <h1 className="title-lg text-[color:var(--text)]">{t.policies.terms.title}</h1>
+        <p className="body-sm">{t.policies.terms.body}</p>
+      </div>
+    </main>
   );
 }

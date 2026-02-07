@@ -1,33 +1,12 @@
-import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader";
-
-export const metadata: Metadata = {
-  title: "JUMVI | Iletisim",
-  description: "JUMVI ekibi ile iletisime gecin.",
-};
+import { t } from "@/lib/i18n";
 
 export default function ContactPage() {
   return (
-    <div>
-      <PageHeader
-        title="Iletisim"
-        subtitle="Siparis, gorev ve destek icin buradayiz."
-        ctaLabel="Satin al"
-        ctaHref="/product"
-        ctaDisabled
-      />
-      <section className="section-pad">
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
-          <div className="card p-6">
-            <h2 className="text-lg font-semibold">E-posta</h2>
-            <p className="mt-2 body-sm">support@jumvi.co</p>
-          </div>
-          <div className="card p-6">
-            <h2 className="text-lg font-semibold">WhatsApp</h2>
-            <p className="mt-2 body-sm">+1 (555) 123-4567</p>
-          </div>
-        </div>
-      </section>
-    </div>
+    <main className="section-pad">
+      <div className="mx-auto max-w-3xl space-y-4">
+        <h1 className="title-lg text-[color:var(--text)]">{t.policies.contact.title}</h1>
+        <p className="body-sm">{t.policies.contact.body}</p>
+      </div>
+    </main>
   );
 }

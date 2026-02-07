@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { t } from "@/lib/i18n";
 
 type HeaderProps = {
   cartCount: number;
@@ -12,13 +15,13 @@ export default function Header({ cartCount, onCartOpen }: HeaderProps) {
         <div className="text-base font-semibold tracking-tight">JUMVI</div>
         <nav className="hidden items-center gap-6 text-sm text-[color:var(--muted)] md:flex">
           <Link href="#urun" className="focus-ring rounded-full px-3 py-1 hover:text-[color:var(--text)]">
-            Ürün
+            {t.nav.product}
           </Link>
           <Link href="#inside" className="focus-ring rounded-full px-3 py-1 hover:text-[color:var(--text)]">
-            Kutunun İçinde
+            {t.nav.inside}
           </Link>
           <Link href="#destek" className="focus-ring rounded-full px-3 py-1 hover:text-[color:var(--text)]">
-            Destek
+            {t.nav.support}
           </Link>
         </nav>
         <div className="flex items-center gap-3">
@@ -27,13 +30,13 @@ export default function Header({ cartCount, onCartOpen }: HeaderProps) {
             onClick={onCartOpen}
             className="btn-primary inline-flex rounded-[16px] px-3 py-2 text-[11px] md:hidden"
           >
-            Sepete Ekle
+            {t.sticky.cta}
           </button>
           <button
             type="button"
             className="focus-ring relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-white/60 text-[color:var(--text)]"
             onClick={onCartOpen}
-            aria-label="Sepeti aç"
+            aria-label={t.cart.title}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path

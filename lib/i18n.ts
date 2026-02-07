@@ -1,0 +1,356 @@
+export const strings = {
+  en: {
+    hero: {
+      kicker: "Premium play set",
+      title: "JUMVI Toss & Catch Set",
+      subtitle: "Safe, active, premium gift-ready play set for ages 3–8.",
+      reviewsLabel: "reviews",
+      shippingNote: "Fast shipping • Easy returns • Secure checkout",
+      delivery: "Estimated delivery: 2–5 business days",
+      freeShipping: "Free shipping over $80",
+      returns: "30-day returns",
+      support: "Support",
+    },
+    badges: ["Soft Balls", "Premium Gift Box", "QR Missions"],
+    trustMicro: ["Fast shipping (US)", "30-day returns", "Secure checkout"],
+    nav: {
+      product: "Product",
+      inside: "What's inside",
+      support: "Support",
+    },
+    socialProof: {
+      highlight: "5,000+ families",
+      copy: "choose screen-free, active play with JUMVI.",
+    },
+    payment: {
+      title: "Payment methods",
+    },
+    guarantee: {
+      title: "Try it for 30 days",
+      subtitle: "Not a fit? Returns are easy.",
+    },
+    benefits: {
+      title: "Why JUMVI?",
+      items: [
+        {
+          title: "Reflex & Coordination",
+          desc: "Supports hand-eye coordination with toss-and-catch play.",
+          result: "Builds hand-eye coordination in minutes",
+        },
+        {
+          title: "Screen-free Movement",
+          desc: "Encourages active play away from screens.",
+          result: "Screen-free movement for daily energy",
+        },
+        {
+          title: "Ready to Play",
+          desc: "Open the box and start—no setup needed.",
+          result: "Gift-ready premium box",
+        },
+      ],
+    },
+    how: {
+      title: "How it works",
+      steps: ["Toss", "Catch", "Complete QR missions"],
+      note: "Designed for play with parent/guardian supervision.",
+      caption: "Great for indoor play—follow missions on your phone.",
+    },
+    inside: {
+      title: "What's inside",
+      subtitle: "Everything you need to play, all in the box.",
+      contents: [
+        { key: "paddles", label: "Paddles" },
+        { key: "balls", label: "Soft Balls" },
+        { key: "meshBag", label: "Mesh Carry Bag" },
+        { key: "qrCard", label: "QR Mission Card" },
+        { key: "giftBox", label: "Premium Gift Box" },
+      ],
+    },
+    safe: {
+      title: "Safe play",
+      rules: [
+        "Toss below face level",
+        "Play at 1–3 meters",
+        "Adult supervision recommended",
+      ],
+      compliance: "CPC / ASTM / CPSIA compliance is planned (not yet certified).",
+    },
+    reviews: {
+      title: "What families say",
+      summary: "4.9 ★ (128 reviews)",
+      verified: "Verified",
+      photos: "Photos from families",
+      items: [
+        { name: "Ava", text: "Beautiful quality and the kids love it.", verified: true },
+        { name: "Noah", text: "Screen-free play that actually gets them moving.", verified: true },
+        { name: "Mia", text: "Gift-ready and super premium feel.", verified: false },
+        { name: "Liam", text: "Perfect for playdates and rainy days.", verified: true },
+        { name: "Ethan", text: "Quick setup, easy rules, big smiles.", verified: false },
+        { name: "Emma", text: "Great for coordination and energy.", verified: true },
+      ],
+    },
+    faq: {
+      title: "FAQs",
+      items: [
+        { q: "Shipping", a: "Estimated 2–5 business days in the US." },
+        { q: "Returns", a: "30-day return window. See Support for details." },
+        { q: "Safety", a: "Soft materials designed for kid-safe play." },
+        { q: "QR Missions", a: "Scan once, then follow the missions on your phone." },
+        { q: "Indoor/Outdoor", a: "Ideal for indoor play, works outdoors too." },
+        { q: "Age Range", a: "Recommended for ages 3–8." },
+      ],
+    },
+    final: {
+      title: "Ready to play?",
+      subtitle: "Turn your child's energy into joyful play.",
+    },
+    cart: {
+      title: "Cart",
+      added: "Added to cart",
+      delivery: "Estimated delivery: 2–5 business days",
+      returns: "Returns: 30 days",
+      secure: "Secure checkout",
+      checkout: "Checkout",
+      keepBrowsing: "Keep browsing",
+      empty: "Your cart is empty",
+      emptyNote: "Add items to continue.",
+      qty: "Qty",
+      subtotal: "Subtotal",
+      freeShippingOver: "Free shipping over $80",
+      decrease: "Decrease",
+      increase: "Increase",
+    },
+    footer: {
+      brand: "JUMVI Shop",
+      supportEmail: "support@jumvi.co",
+      links: {
+        shipping: "Shipping",
+        returns: "Returns",
+        privacy: "Privacy",
+        terms: "Terms",
+        contact: "Contact",
+      },
+      newsletter: "Get mission updates",
+      newsletterPlaceholder: "Email address",
+    },
+    gallery: {
+      zoom: "Open image zoom",
+      select: "Select image",
+      video: "Video",
+      videoPreview: "Video preview",
+      close: "Close",
+    },
+    images: {
+      insideAlt: "In-the-box contents",
+      phoneAlt: "JUMVI missions on phone",
+      heroAlt: "JUMVI Toss & Catch Set",
+      boxAlt: "Gift-ready box",
+      lifestyleAlt: "QR missions on phone",
+      videoAlt: "Product video",
+    },
+    policies: {
+      shipping: {
+        title: "Shipping",
+        body: "Orders typically ship within 2–5 business days. Tracking is provided when your order ships.",
+      },
+      returns: {
+        title: "Returns",
+        body: "You may return your order within 30 days. Contact support for return instructions.",
+      },
+      privacy: {
+        title: "Privacy",
+        body: "We collect only the information required to process orders and improve your experience.",
+      },
+      terms: {
+        title: "Terms",
+        body: "By purchasing JUMVI, you agree to our terms and policies published on this site.",
+      },
+      contact: {
+        title: "Contact",
+        body: "Email support@jumvi.co for questions or order help.",
+      },
+    },
+    sticky: {
+      cta: "Add to Cart",
+      returns: "30-day returns",
+    },
+  },
+  tr: {
+    hero: {
+      kicker: "Premium oyun seti",
+      title: "JUMVI Toss & Catch Set",
+      subtitle: "3–8 yaş için güvenli, hareketli ve premium hediye-hazır oyun seti.",
+      reviewsLabel: "değerlendirme",
+      shippingNote: "Hızlı gönderim • Kolay iade • Güvenli ödeme",
+      delivery: "Tahmini teslimat: 2–5 iş günü",
+      freeShipping: "$80 üzeri ücretsiz kargo",
+      returns: "30 gün iade",
+      support: "Destek",
+    },
+    badges: ["Yumuşak Toplar", "Premium Hediye Kutusu", "QR Görevleri"],
+    trustMicro: ["Hızlı gönderim (US)", "30 gün iade", "Güvenli ödeme"],
+    nav: {
+      product: "Ürün",
+      inside: "Kutunun İçinde",
+      support: "Destek",
+    },
+    socialProof: {
+      highlight: "5.000+ aile",
+      copy: "JUMVI ile ekransız, hareketli oyunları tercih ediyor.",
+    },
+    payment: {
+      title: "Ödeme yöntemleri",
+    },
+    guarantee: {
+      title: "30 gün dene, memnun kalmazsan iade",
+      subtitle: "Risk almadan deneyin. Kolay iade süreci.",
+    },
+    benefits: {
+      title: "Neden JUMVI?",
+      items: [
+        {
+          title: "Refleks & Koordinasyon",
+          desc: "At-yakala oyunuyla el-göz koordinasyonunu destekler.",
+          result: "Dakikalar içinde el-göz koordinasyonu",
+        },
+        {
+          title: "Ekransız Hareket",
+          desc: "Çocukları ekrandan uzaklaştırır, hareket etmeye teşvik eder.",
+          result: "Günlük enerji için ekransız hareket",
+        },
+        {
+          title: "Hemen Oyna",
+          desc: "Kutudan çıkar, oyna — kurulum gerekmez.",
+          result: "Hediye-hazır premium kutu",
+        },
+      ],
+    },
+    how: {
+      title: "Nasıl oynanır?",
+      steps: ["At", "Yakala", "QR görevleri tamamla"],
+      note: "Görevler ebeveyn gözetimiyle oynanacak şekilde tasarlanmıştır.",
+      caption: "Ev içi kullanım için ideal—görevleri telefondan takip edin.",
+    },
+    inside: {
+      title: "Kutunun içinde",
+      subtitle: "Oynamak için ihtiyacınız olan her şey kutunun içinde.",
+      contents: [
+        { key: "paddles", label: "Paddle" },
+        { key: "balls", label: "Soft Top" },
+        { key: "meshBag", label: "Mesh Taşıma Çantası" },
+        { key: "qrCard", label: "QR Görev Kartı" },
+        { key: "giftBox", label: "Premium Hediye Kutusu" },
+      ],
+    },
+    safe: {
+      title: "Güvenli oyun",
+      rules: [
+        "Yüz seviyesinin altına atın",
+        "1–3 metre mesafede oynayın",
+        "Ebeveyn gözetimi önerilir",
+      ],
+      compliance: "CPC / ASTM / CPSIA uyumluluk süreçleri planlanmaktadır.",
+    },
+    reviews: {
+      title: "Aileler ne diyor?",
+      summary: "4.9 ★ (128 değerlendirme)",
+      verified: "Onaylı",
+      photos: "Ailelerden fotoğraflar",
+      items: [
+        { name: "Ava", text: "Kalite harika, çocuklar bayıldı.", verified: true },
+        { name: "Noah", text: "Ekransız ama gerçekten hareket ettiren oyun.", verified: true },
+        { name: "Mia", text: "Hediye-hazır ve premium hissettiriyor.", verified: false },
+        { name: "Liam", text: "Yağmurlu günler için mükemmel.", verified: true },
+        { name: "Ethan", text: "Kurulumu hızlı, kuralları kolay.", verified: false },
+        { name: "Emma", text: "Koordinasyon ve enerji için harika.", verified: true },
+      ],
+    },
+    faq: {
+      title: "Sık sorulan sorular",
+      items: [
+        { q: "Kargo", a: "Tahmini 2–5 iş günü (US)." },
+        { q: "İade", a: "30 gün iade. Detaylar için Destek bölümüne bakın." },
+        { q: "Güvenlik", a: "Yumuşak malzeme ve düşük hız için tasarlanmıştır." },
+        { q: "QR Görevleri", a: "QR kodu bir kez tarayın, görevleri telefondan takip edin." },
+        { q: "İç/Dış Mekan", a: "Ev içi için idealdir, dış mekanda da uygundur." },
+        { q: "Yaş Aralığı", a: "3–8 yaş için önerilir." },
+      ],
+    },
+    final: {
+      title: "Hazır mısınız?",
+      subtitle: "Çocuğunuzun enerjisini oyuna dönüştürün.",
+    },
+    cart: {
+      title: "Sepet",
+      added: "Sepete eklendi",
+      delivery: "Tahmini teslimat: 2–5 iş günü",
+      returns: "İade: 30 gün",
+      secure: "Güvenli ödeme",
+      checkout: "Ödemeye geç",
+      keepBrowsing: "Göz atmaya devam et",
+      empty: "Sepetiniz boş",
+      emptyNote: "Devam etmek için ürün ekleyin.",
+      qty: "Adet",
+      subtotal: "Ara toplam",
+      freeShippingOver: "$80 üzeri ücretsiz kargo",
+      decrease: "Azalt",
+      increase: "Artır",
+    },
+    footer: {
+      brand: "JUMVI Shop",
+      supportEmail: "support@jumvi.co",
+      links: {
+        shipping: "Kargo",
+        returns: "İade",
+        privacy: "Gizlilik",
+        terms: "Koşullar",
+        contact: "İletişim",
+      },
+      newsletter: "Görev güncellemeleri",
+      newsletterPlaceholder: "E-posta adresi",
+    },
+    gallery: {
+      zoom: "Görsel yakınlaştır",
+      select: "Görseli seç",
+      video: "Video",
+      videoPreview: "Video önizleme",
+      close: "Kapat",
+    },
+    images: {
+      insideAlt: "Kutunun içeriği",
+      phoneAlt: "Telefonda JUMVI görevleri",
+      heroAlt: "JUMVI Toss & Catch Set",
+      boxAlt: "Hediye-hazır kutu",
+      lifestyleAlt: "Telefonda QR görevleri",
+      videoAlt: "Ürün videosu",
+    },
+    policies: {
+      shipping: {
+        title: "Kargo",
+        body: "Siparişler genellikle 2–5 iş günü içinde çıkar. Kargolandığında takip bilgisi paylaşılır.",
+      },
+      returns: {
+        title: "İade",
+        body: "30 gün içinde iade edebilirsiniz. İade adımları için destekle iletişime geçin.",
+      },
+      privacy: {
+        title: "Gizlilik",
+        body: "Yalnızca siparişleri işlemek ve deneyiminizi iyileştirmek için gerekli bilgileri toplarız.",
+      },
+      terms: {
+        title: "Koşullar",
+        body: "JUMVI satın alarak bu sitede yayınlanan koşul ve politikalara onay vermiş olursunuz.",
+      },
+      contact: {
+        title: "İletişim",
+        body: "Sorularınız için support@jumvi.co adresine e-posta gönderin.",
+      },
+    },
+    sticky: {
+      cta: "Sepete Ekle",
+      returns: "30 gün iade",
+    },
+  },
+} as const;
+
+export const t = strings.en;

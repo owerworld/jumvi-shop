@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JUMVI | Oyna. Öğren. Hareket et.",
-  description: "QR görevleriyle premium aktif oyun kiti. Çocuklar için hareketli, ekransız oyun.",
-  keywords: ["JUMVI", "çocuk oyun kiti", "QR görev", "aktif oyun", "hediye", "3-8 yaş"],
+  title: "JUMVI | Play. Learn. Move.",
+  description: "Premium active play kit with QR missions for kids.",
+  keywords: ["JUMVI", "kids play kit", "QR missions", "active play", "gift", "ages 3-8"],
   metadataBase: new URL("https://jumvi.co"),
   alternates: {
     canonical: "/",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "JUMVI | Oyna. Öğren. Hareket et.",
-    description: "QR görevleriyle premium aktif oyun kiti. Çocuklar için hareketli, ekransız oyun.",
+    title: "JUMVI | Play. Learn. Move.",
+    description: "Premium active play kit with QR missions for kids.",
     type: "website",
     siteName: "JUMVI",
     images: [
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JUMVI | Oyna. Öğren. Hareket et.",
-    description: "QR görevleriyle premium aktif oyun kiti.",
+    title: "JUMVI | Play. Learn. Move.",
+    description: "Premium active play kit with QR missions for kids.",
     images: ["/og.png"],
   },
 };
@@ -53,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={inter.variable}>
+    <html lang="en" className={inter.variable}>
       <head>
         <meta charSet="utf-8" />
       </head>

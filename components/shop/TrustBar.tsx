@@ -1,5 +1,7 @@
+import { t } from "@/lib/i18n";
+
 export default function TrustBar() {
-  const items = ["30 gün iade", "Hızlı gönderim", "Güvenli ödeme"];
+  const items = t.trustMicro;
 
   return (
     <section className="section-pad pt-4">

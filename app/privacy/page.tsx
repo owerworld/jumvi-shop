@@ -1,25 +1,12 @@
-import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader";
-
-export const metadata: Metadata = {
-  title: "JUMVI | Gizlilik",
-  description: "JUMVI gizlilik politikasi.",
-};
+import { t } from "@/lib/i18n";
 
 export default function PrivacyPage() {
   return (
-    <div>
-      <PageHeader title="Gizlilik" subtitle="Gizliliginize saygi duyar, verinizi koruruz." />
-      <section className="section-pad">
-        <div className="mx-auto max-w-3xl space-y-4 text-sm text-brand-ink/70">
-          <p>
-            Siparisleri islemek ve JUMVI deneyimini gelistirmek icin gereken minimum bilgiyi toplariz. Kisisel verileri asla satmayiz.
-          </p>
-          <p>
-            Sorulariniz icin support@jumvi.co adresinden bize ulasabilirsiniz.
-          </p>
-        </div>
-      </section>
-    </div>
+    <main className="section-pad">
+      <div className="mx-auto max-w-3xl space-y-4">
+        <h1 className="title-lg text-[color:var(--text)]">{t.policies.privacy.title}</h1>
+        <p className="body-sm">{t.policies.privacy.body}</p>
+      </div>
+    </main>
   );
 }

@@ -1,14 +1,16 @@
+import { t } from "@/lib/i18n";
+
 export default function SafePlay() {
   const rules = [
-    { text: "Yüz seviyesinin altına atın", color: "bg-brand-blue/70" },
-    { text: "1–3 metre mesafede oynayın", color: "bg-brand-green/70" },
-    { text: "Ebeveyn gözetimi önerilir", color: "bg-brand-orange/70" },
+    { text: t.safe.rules[0], color: "bg-brand-blue/70" },
+    { text: t.safe.rules[1], color: "bg-brand-green/70" },
+    { text: t.safe.rules[2], color: "bg-brand-orange/70" },
   ];
 
   return (
     <section className="section-pad pt-12">
       <div className="mx-auto max-w-6xl">
-        <h2 className="title-md text-[color:var(--text)]">Güvenli oyun</h2>
+        <h2 className="title-md text-[color:var(--text)]">{t.safe.title}</h2>
         <div className="mt-6 grid gap-3">
           {rules.map((rule) => (
             <div key={rule.text} className="surface flex items-center gap-3 rounded-2xl border border-black/5 px-4 py-3 text-sm text-[color:var(--muted)]">
@@ -17,9 +19,7 @@ export default function SafePlay() {
             </div>
           ))}
         </div>
-        <p className="body-sm mt-4">
-          CPC / ASTM / CPSIA uyumluluk süreçleri planlanmaktadır.
-        </p>
+        <p className="body-sm mt-4">{t.safe.compliance}</p>
       </div>
     </section>
   );

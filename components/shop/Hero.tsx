@@ -1,78 +1,77 @@
-import Image from "next/image";
+"use client";
+
+import { t } from "@/lib/i18n";
 import { product } from "@/lib/product";
+import Gallery from "@/components/shop/Gallery";
+import type { GalleryItem } from "@/components/shop/Gallery";
 
 type HeroProps = {
   onAddToCart: () => void;
+  onOpenLightbox: (index: number) => void;
+  galleryItems: GalleryItem[];
 };
 
-export default function Hero({ onAddToCart }: HeroProps) {
+export default function Hero({ onAddToCart, onOpenLightbox, galleryItems }: HeroProps) {
   return (
     <section className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-      <div className="space-y-6">
-        <p className="eyebrow">JUMVI Shop</p>
-        <h1 className="title-xl text-[color:var(--text)] leading-tight">JUMVI Toss & Catch Set</h1>
-        <p className="body-md">
-          3–8 yaş için güvenli, hareketli ve premium hediye-hazır oyun seti.
-        </p>
+      <div className="space-y-6" id="hero-trigger">
+        <p className="eyebrow">{t.hero.kicker}</p>
+        <h1 className="title-xl text-[color:var(--text)] leading-tight">{t.hero.title}</h1>
+        <p className="body-md">{t.hero.subtitle}</p>
         <div className="flex items-center gap-4 text-sm text-[color:var(--muted)]">
           <span className="text-3xl font-semibold text-[color:var(--text)]">${product.price}</span>
           <span>•</span>
-          <span>{product.rating} ★ ({product.reviewCount} değerlendirme)</span>
+          <span>
+            {product.rating} ★ ({product.reviewCount} {t.hero.reviewsLabel})
+          </span>
         </div>
-        <p className="text-xs text-[color:var(--muted)]">
-          Kargo: $50 üzeri ücretsiz • 30 gün iade
-        </p>
         <div className="flex flex-wrap gap-2">
-          {[
-            "Yumuşak Toplar",
-            "Premium Hediye Kutusu",
-            "QR Görevleri",
-          ].map((badge) => (
+          {t.badges.map((badge) => (
             <span key={badge} className="badge">
               {badge}
             </span>
           ))}
         </div>
         <div className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
-          <span className="rounded-full border border-black/5 bg-white/60 px-3 py-1">CPC/ASTM süreçleri planlanıyor</span>
-          <span className="rounded-full border border-black/5 bg-white/60 px-3 py-1">Güvenli malzeme</span>
+          {t.trustMicro.map((item) => (
+            <span key={item} className="rounded-full border border-black/5 bg-white/60 px-3 py-1">
+              {item}
+            </span>
+          ))}
         </div>
         <div className="flex flex-wrap gap-3">
           <button type="button" className="btn-primary rounded-[18px] px-6 py-3 text-sm" onClick={onAddToCart}>
-            Sepete Ekle
+            {t.sticky.cta}
           </button>
           <a href="#inside" className="btn-secondary rounded-[18px] px-6 py-3 text-sm">
-            Kutunun İçinde
+            {t.inside.title}
           </a>
         </div>
         <div className="flex flex-wrap items-center gap-4 text-xs text-[color:var(--muted)]">
-          <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-brand-green" />
-            <span>Hızlı gönderim</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-brand-blue" />
-            <span>Kolay iade</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-brand-orange" />
-            <span>Güvenli ödeme</span>
+          {t.trustMicro.map((item, index) => (
+            <div key={item} className="flex items-center gap-2">
+              <span className={`h-2 w-2 rounded-full ${index === 0 ? "bg-brand-green" : index === 1 ? "bg-brand-blue" : "bg-brand-orange"}`} />
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+        <div className="mt-4">
+          <div className="rounded-2xl border border-black/5 bg-[color:var(--surface)] px-4 py-3 text-xs text-[color:var(--muted)]">
+            <div className="flex flex-wrap items-center gap-3">
+              <span>{t.hero.delivery}</span>
+              <span>•</span>
+              <span>{t.hero.freeShipping}</span>
+              <span>•</span>
+              <span>{t.hero.returns}</span>
+              <a href="#destek" className="underline">
+                {t.hero.support}
+              </a>
+            </div>
           </div>
         </div>
       </div>
       <div className="glass glass-surface relative rounded-[24px] p-5">
-        <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-blue/20 blur-3xl" />
-        <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-brand-green/20 blur-3xl" />
-        <div className="relative flex h-full min-h-[300px] items-center justify-center rounded-2xl bg-white/70 p-5">
-          <Image
-            src="/jumvi-hero.png"
-            alt="JUMVI Toss & Catch Set ürün görseli"
-            width={520}
-            height={520}
-            className="h-auto w-full object-contain"
-            priority
-          />
-        </div>
+        <Gallery items={galleryItems} onOpen={onOpenLightbox} />
       </div>
     </section>
   );
