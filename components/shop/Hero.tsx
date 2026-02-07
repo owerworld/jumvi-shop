@@ -7,7 +7,7 @@ type HeroProps = {
 
 export default function Hero({ onAddToCart }: HeroProps) {
   return (
-    <section className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+    <section className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.1fr_0.9fr]">
       <div className="space-y-6">
         <p className="eyebrow">JUMVI Shop</p>
         <h1 className="title-xl text-[color:var(--text)]">JUMVI Toss & Catch Set</h1>
@@ -57,10 +57,10 @@ export default function Hero({ onAddToCart }: HeroProps) {
           </div>
         </div>
       </div>
-      <div className="glass glass-surface relative rounded-[28px] p-6">
+      <div className="glass glass-surface relative rounded-[24px] p-5">
         <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-blue/20 blur-3xl" />
         <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-brand-green/20 blur-3xl" />
-        <div className="relative flex h-full min-h-[320px] items-center justify-center rounded-2xl bg-white/70 p-6">
+        <div className="relative flex h-full min-h-[300px] items-center justify-center rounded-2xl bg-white/70 p-5">
           <Image
             src="/jumvi-hero.png"
             alt="JUMVI Toss & Catch Set ürün görseli"

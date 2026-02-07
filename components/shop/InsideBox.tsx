@@ -17,7 +17,7 @@ export default function InsideBox() {
       <div className="mx-auto max-w-6xl">
         <h2 className="title-md text-[color:var(--text)]">Kutunun içinde</h2>
         <p className="body-sm mt-2">Oynamak için ihtiyacınız olan her şey kutunun içinde.</p>
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mt-6 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="grid gap-3">
             {contentItems.map((item) => (
               <div key={item.key} className="surface rounded-2xl border border-black/5 px-4 py-3">

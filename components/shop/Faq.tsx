@@ -48,7 +48,7 @@ export default function Faq() {
         <h2 className="title-md text-[color:var(--text)]">Sık sorulan sorular</h2>
         <div className="mt-6 grid gap-3 md:grid-cols-2">
           {faqs.map((item) => (
-            <details key={item.q} className="surface rounded-2xl border border-black/5 p-4">
+            <details key={item.q} className="surface min-h-[120px] rounded-2xl border border-black/5 p-4">
               <summary className="cursor-pointer text-sm font-semibold text-[color:var(--text)]">
                 {item.q}
               </summary>

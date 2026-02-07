@@ -7,8 +7,8 @@ type HeaderProps = {
 
 export default function Header({ cartCount, onCartOpen }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-30 w-full px-5 py-4 sm:px-10">
-      <div className="glass glass-surface mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-5 py-3">
+    <header className="sticky top-0 z-30 w-full px-5 py-3 sm:px-10">
+      <div className="glass glass-surface mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-2.5">
         <div className="text-base font-semibold tracking-tight">JUMVI</div>
         <nav className="hidden items-center gap-6 text-sm text-[color:var(--muted)] md:flex">
           <Link href="#urun" className="focus-ring rounded-full px-3 py-1 hover:text-[color:var(--text)]">
@@ -31,7 +31,7 @@ export default function Header({ cartCount, onCartOpen }: HeaderProps) {
           </button>
           <button
             type="button"
-            className="focus-ring relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/60 text-[color:var(--text)]"
+            className="focus-ring relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-white/60 text-[color:var(--text)]"
             onClick={onCartOpen}
             aria-label="Sepeti aç"
           >
