@@ -38,9 +38,20 @@ export default function Hero({ onAddToCart }: HeroProps) {
             Kutunun İçinde
           </a>
         </div>
-        <p className="text-xs text-[color:var(--muted)]">
-          Hızlı gönderim • Kolay iade • Güvenli ödeme
-        </p>
+        <div className="flex flex-wrap items-center gap-4 text-xs text-[color:var(--muted)]">
+          <div className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-brand-green" />
+            <span>Hızlı gönderim</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-brand-blue" />
+            <span>Kolay iade</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-brand-orange" />
+            <span>Güvenli ödeme</span>
+          </div>
+        </div>
       </div>
       <div className="glass glass-surface relative rounded-[28px] p-6">
         <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-blue/20 blur-3xl" />

@@ -43,7 +43,7 @@ const faqs: FaqItem[] = [
 
 export default function Faq() {
   return (
-    <section className="section-pad pt-12">
+    <section id="faq" className="section-pad pt-12">
       <div className="mx-auto max-w-6xl">
         <h2 className="title-md text-[color:var(--text)]">Sık sorulan sorular</h2>
         <div className="mt-6 grid gap-3 md:grid-cols-2">
