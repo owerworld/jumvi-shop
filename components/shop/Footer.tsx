@@ -3,7 +3,7 @@ import PolicyFooterLinks from "@/components/shop/PolicyFooterLinks";
 
 export default function Footer() {
   return (
-    <footer id="destek" className="footer-safe surface border-t border-black/5 px-6 py-10 text-center text-xs text-[color:var(--muted)]">
+    <footer id="destek" className="footer-safe cv-auto surface border-t border-black/5 px-6 py-10 text-center text-xs text-[color:var(--muted)]">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-2">
         <span>{t.footer.brand}</span>
         <span>{t.footer.supportEmail}</span>

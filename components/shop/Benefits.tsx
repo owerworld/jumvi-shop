@@ -4,7 +4,7 @@ export default function Benefits() {
   const items = t.benefits.items;
 
   return (
-    <section className="section-pad pt-12">
+    <section className="section-pad cv-auto pt-12">
       <div className="mx-auto max-w-6xl">
         <h2 className="title-md text-[color:var(--text)]">{t.benefits.title}</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-3">

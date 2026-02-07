@@ -3,7 +3,7 @@ import { t } from "@/lib/i18n";
 
 export default function Faq() {
   return (
-    <section id="faq" className="section-pad pt-12">
+    <section id="faq" className="section-pad cv-auto pt-12">
       <div className="mx-auto max-w-6xl">
         <h2 className="title-md text-[color:var(--text)]">{t.faq.title}</h2>
         <div className="mt-6 grid gap-3 md:grid-cols-2">

@@ -5,7 +5,7 @@ export default function HowItWorks() {
   const steps = t.how.steps;
 
   return (
-    <section className="section-pad pt-12">
+    <section className="section-pad cv-auto pt-12">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <h2 className="title-md text-[color:var(--text)]">{t.how.title}</h2>

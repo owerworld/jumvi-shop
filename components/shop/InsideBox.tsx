@@ -4,7 +4,7 @@ import { product } from "@/lib/product";
 
 export default function InsideBox() {
   return (
-    <section id="inside" className="section-pad pt-12">
+    <section id="inside" className="section-pad cv-auto pt-12">
       <div className="mx-auto max-w-6xl">
         <h2 className="title-md text-[color:var(--text)]">{t.inside.title}</h2>
         <p className="body-sm mt-2">{t.inside.subtitle}</p>

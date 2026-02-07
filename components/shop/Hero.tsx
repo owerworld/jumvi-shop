@@ -47,6 +47,7 @@ export default function Hero({ onAddToCart, onOpenLightbox, galleryItems }: Hero
             {t.inside.title}
           </a>
         </div>
+        <p className="text-xs text-[color:var(--muted)]">{t.hero.microCta}</p>
         <div className="flex flex-wrap items-center gap-4 text-xs text-[color:var(--muted)]">
           {t.trustMicro.map((item, index) => (
             <div key={item} className="flex items-center gap-2">

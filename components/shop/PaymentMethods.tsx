@@ -4,7 +4,7 @@ export default function PaymentMethods() {
   const methods = ["Visa", "Mastercard", "Apple Pay", "Google Pay"];
 
   return (
-    <section className="section-pad pt-8">
+    <section className="section-pad cv-auto pt-8">
       <div className="mx-auto max-w-6xl">
         <p className="text-xs font-semibold text-[color:var(--muted)]">{t.payment.title}</p>
         <div className="mt-3 flex flex-wrap gap-2">

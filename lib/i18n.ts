@@ -5,6 +5,7 @@ export const strings = {
       title: "JUMVI Toss & Catch Set",
       subtitle: "Safe, active, premium gift-ready play set for ages 3–8.",
       reviewsLabel: "reviews",
+      microCta: "Ships fast • 30-day returns • Secure checkout",
       shippingNote: "Fast shipping • Easy returns • Secure checkout",
       delivery: "Estimated delivery: 2–5 business days",
       freeShipping: "Free shipping over $80",
@@ -20,7 +21,7 @@ export const strings = {
     },
     socialProof: {
       highlight: "5,000+ families",
-      copy: "choose screen-free, active play with JUMVI.",
+      copy: "in the US choose screen-free, active play with JUMVI.",
     },
     payment: {
       title: "Payment methods",
@@ -174,6 +175,10 @@ export const strings = {
       cta: "Add to Cart",
       returns: "30-day returns",
     },
+    reviewsCta: {
+      title: "Loved by families",
+      subtitle: "Verified reviews from real households.",
+    },
     story: {
       title: "Why families choose JUMVI",
       materials: {
@@ -206,6 +211,7 @@ export const strings = {
       title: "JUMVI Toss & Catch Set",
       subtitle: "3–8 yaş için güvenli, hareketli ve premium hediye-hazır oyun seti.",
       reviewsLabel: "değerlendirme",
+      microCta: "Hızlı gönderim • 30 gün iade • Güvenli ödeme",
       shippingNote: "Hızlı gönderim • Kolay iade • Güvenli ödeme",
       delivery: "Tahmini teslimat: 2–5 iş günü",
       freeShipping: "$80 üzeri ücretsiz kargo",
@@ -221,7 +227,7 @@ export const strings = {
     },
     socialProof: {
       highlight: "5.000+ aile",
-      copy: "JUMVI ile ekransız, hareketli oyunları tercih ediyor.",
+      copy: "US'de JUMVI ile ekransız, hareketli oyunları tercih ediyor.",
     },
     payment: {
       title: "Ödeme yöntemleri",
@@ -374,6 +380,10 @@ export const strings = {
     sticky: {
       cta: "Sepete Ekle",
       returns: "30 gün iade",
+    },
+    reviewsCta: {
+      title: "Ailelerin favorisi",
+      subtitle: "Gerçek ailelerden onaylı yorumlar.",
     },
     story: {
       title: "Ailelerin JUMVI'yi seçme nedeni",

@@ -2,10 +2,13 @@ import { t } from "@/lib/i18n";
 
 export default function Testimonials() {
   return (
-    <section className="section-pad pt-12">
+    <section className="section-pad cv-auto pt-12">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <h2 className="title-md text-[color:var(--text)]">{t.reviews.title}</h2>
+          <div>
+            <h2 className="title-md text-[color:var(--text)]">{t.reviews.title}</h2>
+            <p className="body-sm mt-2">{t.reviewsCta.subtitle}</p>
+          </div>
           <div className="text-sm text-[color:var(--muted)]">{t.reviews.summary}</div>
         </div>
         <div className="mt-6 flex gap-4 overflow-x-auto pb-2" style={{ scrollSnapType: "x mandatory" }}>
