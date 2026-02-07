@@ -1,108 +1,108 @@
 {
   "brand": {
     "name": "JUMVI",
-    "tagline": "Play. Learn. Move.",
-    "subtitle": "Active play missions for curious kids",
-    "description": "A premium, kid-friendly kit that blends movement, learning, and joyful challenges."
+    "tagline": "Oyna. Ogren. Hareket et.",
+    "subtitle": "Merakli cocuklar icin aktif oyun gorevleri",
+    "description": "Hareketi, ogrenmeyi ve keyifli meydan okumayi bir araya getiren premium oyun kiti."
   },
   "ctas": {
-    "buy": "Buy now",
-    "missions": "See missions"
+    "buy": "Satin al",
+    "missions": "Gorevleri gor"
   },
   "trustBar": [
-    "Safety-tested materials",
-    "Ages 3-8",
-    "Gift-ready packaging",
-    "QR missions inside"
+    "Guvenlik testlerinden gecti",
+    "3-8 yas icin",
+    "Hediye hazir paket",
+    "QR gorev sistemi"
   ],
   "insideBox": [
     {
-      "title": "4 paddles",
-      "desc": "Lightweight, grippy, kid-safe"
+      "title": "4 paddle",
+      "desc": "Hafif, tutusu rahat"
     },
     {
-      "title": "4 balls",
-      "desc": "Soft bounce, indoor friendly"
+      "title": "4 top",
+      "desc": "Yumusak seken, ev icin uygun"
     },
     {
-      "title": "Mesh bag",
-      "desc": "Easy carry and storage"
+      "title": "File canta",
+      "desc": "Tasima ve saklama kolayligi"
     },
     {
-      "title": "QR insert",
-      "desc": "Instant missions & tips"
+      "title": "QR kart",
+      "desc": "Aninda gorev ve ipucu"
     }
   ],
   "howItWorks": [
     {
-      "title": "Scan",
-      "desc": "Open the QR to get your mission"
+      "title": "Tara",
+      "desc": "QR kodu ac ve gorevini al"
     },
     {
-      "title": "Play",
-      "desc": "Follow the challenge and move together"
+      "title": "Oyna",
+      "desc": "Meydani takip et ve hareket et"
     },
     {
-      "title": "Finish",
-      "desc": "Celebrate and unlock the next one"
+      "title": "Bitir",
+      "desc": "Kutla ve yeni goreve gec"
     }
   ],
   "missions": [
     {
-      "title": "Color Dash",
-      "desc": "Find and touch 3 objects that match the card color."
+      "title": "Renk Kosusu",
+      "desc": "Karttaki renkle eslesen 3 esyaya dokun."
     },
     {
-      "title": "Bounce Count",
-      "desc": "Bounce the ball 10 times without dropping."
+      "title": "Sekis Sayaci",
+      "desc": "Topu 10 kez dusurmeden sektir."
     },
     {
-      "title": "Quiet Ninja",
-      "desc": "Move across the room without making sound."
+      "title": "Sessiz Ninja",
+      "desc": "Odayi ses cikarmadan gec."
     },
     {
-      "title": "Mirror Moves",
-      "desc": "Copy your partner's paddle poses."
+      "title": "Ayna Hareketi",
+      "desc": "Partnerinin hareketlerini kopyala."
     },
     {
-      "title": "Target Tap",
-      "desc": "Tap 5 targets in order as fast as you can."
+      "title": "Hedef Dokunus",
+      "desc": "Siradaki 5 hedefe hizla dokun."
     },
     {
-      "title": "Animal Steps",
-      "desc": "Hop like a bunny, walk like a bear, and tip-toe like a cat."
+      "title": "Hayvan Adimi",
+      "desc": "Tavsan gibi zipla, ayi gibi yuru, kedi gibi sessiz ol."
     }
   ],
   "reviews": [
     {
       "name": "Seda",
-      "text": "Beautiful packaging and the missions are genuinely fun. My kids ask for it every day."
+      "text": "Paketleme cok guzel, gorevler gercekten eglenceli. Cocuklarim her gun istiyor."
     },
     {
       "name": "Murat",
-      "text": "Finally an activity that gets them moving without a screen." 
+      "text": "Ekransiz hareket icin harika bir cozum."
     },
     {
       "name": "Elif",
-      "text": "Feels premium, easy to set up, and perfect for playdates." 
+      "text": "Premium hissediyor, kurulumu kolay ve oyun bulusmalari icin ideal."
     }
   ],
   "faq": [
     {
-      "q": "Is it safe for indoor play?",
-      "a": "Yes. The balls are soft-bounce and the paddles are lightweight with smooth edges."
+      "q": "Ev icinde guvenli mi?",
+      "a": "Evet. Toplar yumusak seken, paddlelar hafif ve yuvarlak kenarli."
     },
     {
-      "q": "Do missions require a phone?",
-      "a": "You only need a phone to scan the QR once. After that, you can play screen-free."
+      "q": "Gorevler icin telefon gerekli mi?",
+      "a": "QR kodu bir kez taramak yeterli. Sonra ekransiz oynayabilirsiniz."
     },
     {
-      "q": "What's the age range?",
-      "a": "Designed for ages 3-8, with missions that scale for older siblings too."
+      "q": "Yas araligi nedir?",
+      "a": "3-8 yas icin tasarlandi. Daha buyuk kardesler icin de uygun."
     }
   ],
   "footer": {
     "social": ["Instagram", "TikTok", "YouTube"],
-    "legal": ["Privacy", "Terms", "Shipping & Returns"]
+    "legal": ["Gizlilik", "Kosullar", "Gonderim ve Iade"]
   }
 }

@@ -2,9 +2,9 @@ import Link from "next/link";
 import content from "@/lib/content";
 
 const legalLinks = [
-  { href: "/privacy", label: "Privacy" },
-  { href: "/terms", label: "Terms" },
-  { href: "/shipping-returns", label: "Shipping & Returns" },
+  { href: "/privacy", label: "Gizlilik" },
+  { href: "/terms", label: "Kosullar" },
+  { href: "/shipping-returns", label: "Gonderim ve Iade" },
 ];
 
 export default function Footer() {
@@ -13,13 +13,13 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 sm:px-10 md:grid-cols-2">
         <div className="space-y-3">
           <div className="text-lg font-semibold">JUMVI</div>
-          <p className="text-sm text-brand-ink/60">
-            Premium play missions for kids. Designed for joyful movement and mindful fun.
+          <p className="body-sm">
+            Cocuklar icin premium oyun gorevleri. Hareket ve ogrenmeyi bir araya getirir.
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="space-y-2 text-sm">
-            <p className="font-semibold text-brand-ink/70">Legal</p>
+            <p className="font-semibold text-brand-ink/70">Yasal</p>
             {legalLinks.map((link) => (
               <Link key={link.href} href={link.href} className="block text-brand-ink/60 hover:text-brand-ink">
                 {link.label}
@@ -27,11 +27,11 @@ export default function Footer() {
             ))}
           </div>
           <div className="space-y-2 text-sm">
-            <p className="font-semibold text-brand-ink/70">Social</p>
+            <p className="font-semibold text-brand-ink/70">Sosyal</p>
             {content.footer.social.map((item) => (
-              <span key={item} className="block text-brand-ink/60">
+              <a key={item} href="#" className="block text-brand-ink/60 hover:text-brand-ink" aria-disabled="true">
                 {item}
-              </span>
+              </a>
             ))}
           </div>
         </div>

@@ -5,13 +5,20 @@ export default function Reviews() {
     <section className="section-pad">
       <div className="mx-auto max-w-6xl space-y-8">
         <div>
-          <h2 className="text-2xl font-semibold tracking-tight">Parents love it</h2>
-          <p className="text-sm text-brand-ink/60">Real reactions from early testers.</p>
+          <h2 className="title-md">Aileler cok sevdi</h2>
+          <p className="body-sm">Ilk kullananlardan gercek yorumlar.</p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {content.reviews.map((review) => (
             <div key={review.name} className="card p-6">
-              <p className="text-sm text-brand-ink/70">"{review.text}"</p>
+              <div className="mb-3 flex items-center gap-1">
+                <span className="h-2 w-2 rounded-full bg-brand-orange/60" />
+                <span className="h-2 w-2 rounded-full bg-brand-orange/60" />
+                <span className="h-2 w-2 rounded-full bg-brand-orange/60" />
+                <span className="h-2 w-2 rounded-full bg-brand-orange/60" />
+                <span className="h-2 w-2 rounded-full bg-brand-orange/60" />
+              </div>
+              <p className="body-md">"{review.text}"</p>
               <p className="mt-4 text-xs font-semibold text-brand-ink/60">{review.name}</p>
             </div>
           ))}

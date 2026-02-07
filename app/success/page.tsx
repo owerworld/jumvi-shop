@@ -2,24 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "JUMVI | Order Success",
-  description: "Your order is confirmed.",
+  title: "JUMVI | Siparis Onaylandi",
+  description: "Siparisiniz alindi.",
 };
 
 export default function SuccessPage() {
   return (
     <section className="section-pad gradient-bg">
       <div className="mx-auto max-w-3xl space-y-4 text-center">
-        <h1 className="text-3xl font-semibold tracking-tight">Order confirmed</h1>
-        <p className="text-sm text-brand-ink/60">
-          Thank you for choosing JUMVI. Your missions are on the way!
+        <h1 className="title-lg">Siparis alindi</h1>
+        <p className="body-sm">
+          JUMVI'yi tercih ettigin icin tesekkurler. Gorevlerin yolda!
         </p>
         <div className="flex justify-center gap-3">
           <Link href="/missions" className="btn-primary">
-            Explore missions
+            Gorevleri kesfet
           </Link>
           <Link href="/" className="btn-secondary">
-            Back home
+            Ana sayfa
           </Link>
         </div>
       </div>

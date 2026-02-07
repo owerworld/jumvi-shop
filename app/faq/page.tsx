@@ -3,18 +3,19 @@ import FAQ from "@/components/FAQ";
 import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "JUMVI | FAQ",
-  description: "Answers about the JUMVI play kit, shipping, and safety.",
+  title: "JUMVI | SSS",
+  description: "JUMVI oyun kiti, gonderim ve guvenlik hakkinda yanitlar.",
 };
 
 export default function FaqPage() {
   return (
     <div>
       <PageHeader
-        title="Frequently asked questions"
-        subtitle="Everything you need to know before your first mission."
-        ctaLabel="Buy now"
+        title="Sik sorulan sorular"
+        subtitle="Ilk gorevden once bilmeniz gerekenler."
+        ctaLabel="Satin al"
         ctaHref="/product"
+        ctaDisabled
       />
       <FAQ />
     </div>

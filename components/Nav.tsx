@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const links = [
-  { href: "/product", label: "Product" },
-  { href: "/missions", label: "Missions" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact" },
+  { href: "/product", label: "Urun" },
+  { href: "/missions", label: "Gorevler" },
+  { href: "/faq", label: "SSS" },
+  { href: "/contact", label: "Iletisim" },
 ];
 
 export default function Nav() {
@@ -22,9 +22,14 @@ export default function Nav() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <Link href="/product" className="btn-primary" aria-label="Buy JUMVI now">
-            Buy now
-          </Link>
+          <button
+            type="button"
+            className="btn-primary cursor-not-allowed opacity-60"
+            aria-label="Satin al yakinda"
+            disabled
+          >
+            Satin al
+          </button>
         </div>
       </div>
     </header>

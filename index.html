@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JUMVI Panel</title>
+  <link rel="stylesheet" href="/panel/styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="logo">J</div>
+        <div class="title">
+          <b data-i18n="brand.title"></b>
+          <span data-i18n="brand.subtitle"></span>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <div class="search">
+          <span class="search-icon">⌕</span>
+          <input id="globalSearch" type="search" data-i18n-placeholder="topbar.search" />
+        </div>
+        <div class="menu">
+          <button class="btn" id="exportMenuBtn" data-i18n="topbar.export"></button>
+          <div class="menu-panel" id="exportMenu">
+            <button class="menu-item" data-export="csv" data-i18n="export.csv"></button>
+            <button class="menu-item" data-export="xlsx" data-i18n="export.xlsx"></button>
+            <button class="menu-item" data-export="json" data-i18n="export.json"></button>
+            <button class="menu-item" data-export="summary" data-i18n="export.summary"></button>
+          </div>
+        </div>
+        <button class="btn" id="importBtn" data-i18n="topbar.import"></button>
+        <select class="select" id="langSelect" aria-label="Language">
+          <option value="tr">TR</option>
+          <option value="en">EN</option>
+        </select>
+        <button class="btn btn-danger" id="clearBtn" data-i18n="topbar.clear"></button>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <div class="kpi-grid" id="stats"></div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="suppliers" data-i18n="tabs.suppliers"></button>
+      <button class="tab" data-tab="invoices" data-i18n="tabs.invoices"></button>
+      <button class="tab" data-tab="payments" data-i18n="tabs.payments"></button>
+      <button class="tab" data-tab="documents" data-i18n="tabs.documents"></button>
+      <button class="tab" data-tab="files" data-i18n="tabs.files"></button>
+      <button class="tab" data-tab="qc" data-i18n="tabs.qc"></button>
+      <button class="tab" data-tab="amazon" data-i18n="tabs.amazon"></button>
+      <button class="tab" data-tab="profit" data-i18n="tabs.profit"></button>
+    </div>
+
+    <div id="mainPanel"></div>
+  </main>
+
+  <div id="globalMsg" class="msg"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.8/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="/panel/app.js"></script>
+</body>
+</html>

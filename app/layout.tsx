@@ -13,12 +13,12 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "JUMVI | Play. Learn. Move.",
-  description: "Premium active play kit with QR missions for kids.",
+  title: "JUMVI | Oyna. Ogren. Hareket et.",
+  description: "QR gorevleriyle premium aktif oyun kiti.",
   metadataBase: new URL("https://jumvi.com"),
   openGraph: {
-    title: "JUMVI | Play. Learn. Move.",
-    description: "Premium active play kit with QR missions for kids.",
+    title: "JUMVI | Oyna. Ogren. Hareket et.",
+    description: "QR gorevleriyle premium aktif oyun kiti.",
     type: "website",
   },
 };

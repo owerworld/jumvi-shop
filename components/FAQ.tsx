@@ -5,15 +5,17 @@ export default function FAQ() {
     <section className="section-pad">
       <div className="mx-auto max-w-6xl space-y-8">
         <div>
-          <h2 className="text-2xl font-semibold tracking-tight">FAQ</h2>
-          <p className="text-sm text-brand-ink/60">Quick answers before you play.</p>
+          <h2 className="title-md">Sik sorulan sorular</h2>
+          <p className="body-sm">Kisa ve net yanitlar.</p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {content.faq.map((item) => (
-            <div key={item.q} className="card p-5">
-              <h3 className="text-sm font-semibold text-brand-ink">{item.q}</h3>
-              <p className="mt-2 text-sm text-brand-ink/60">{item.a}</p>
-            </div>
+            <details key={item.q} className="card p-5">
+              <summary className="cursor-pointer text-sm font-semibold text-brand-ink">
+                {item.q}
+              </summary>
+              <p className="mt-2 body-sm">{item.a}</p>
+            </details>
           ))}
         </div>
       </div>

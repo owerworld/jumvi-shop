@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "JUMVI | Terms",
-  description: "Terms of service for JUMVI.",
+  title: "JUMVI | Kosullar",
+  description: "JUMVI hizmet kosullari.",
 };
 
 export default function TermsPage() {
   return (
     <div>
-      <PageHeader title="Terms" subtitle="Simple, transparent terms for every order." />
+      <PageHeader title="Kosullar" subtitle="Her siparis icin sade ve seffaf kosullar." />
       <section className="section-pad">
         <div className="mx-auto max-w-3xl space-y-4 text-sm text-brand-ink/70">
           <p>
-            By purchasing JUMVI, you agree to our standard terms including payment, shipping timelines, and return policies described on this site.
+            JUMVI satin aldiginizda, bu sitede belirtilen odeme, gonderim ve iade kosullarini kabul etmis olursunuz.
           </p>
           <p>
-            Contact support@jumvi.com for any questions about these terms.
+            Sorulariniz icin support@jumvi.com adresine yazabilirsiniz.
           </p>
         </div>
       </section>

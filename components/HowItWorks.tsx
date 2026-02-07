@@ -5,15 +5,19 @@ export default function HowItWorks() {
     <section className="section-pad">
       <div className="mx-auto max-w-6xl space-y-8">
         <div>
-          <h2 className="text-2xl font-semibold tracking-tight">How it works</h2>
-          <p className="text-sm text-brand-ink/60">Three steps to playful learning.</p>
+          <h2 className="title-md">Nasil calisir</h2>
+          <p className="body-sm">Uc adimda hareketli ogrenme.</p>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
           {content.howItWorks.map((step, index) => (
             <div key={step.title} className="card p-6">
-              <div className="mb-3 text-xs font-semibold text-brand-ink/50">0{index + 1}</div>
-              <h3 className="text-lg font-semibold">{step.title}</h3>
-              <p className="text-sm text-brand-ink/60">{step.desc}</p>
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue/10 text-sm font-semibold text-brand-blue">
+                  0{index + 1}
+                </div>
+                <h3 className="text-lg font-semibold">{step.title}</h3>
+              </div>
+              <p className="mt-3 body-sm">{step.desc}</p>
             </div>
           ))}
         </div>
