@@ -6,6 +6,8 @@ export const strings = {
       subtitle: "Safe, active, premium gift-ready play set for ages 3–8.",
       reviewsLabel: "reviews",
       microCta: "Ships fast • 30-day returns • Secure checkout",
+      valueLine: "Best value for ages 3–8.",
+      urgencyLine: "Next batch ships soon.",
       shippingNote: "Fast shipping • Easy returns • Secure checkout",
       delivery: "Estimated delivery: 2–5 business days",
       freeShipping: "Free shipping over $80",
@@ -204,6 +206,20 @@ export const strings = {
       errorBody: "Stripe is not connected yet. Please try again later.",
       close: "Close",
     },
+    status: {
+      success: {
+        title: "Order confirmed",
+        body: "Thanks for choosing JUMVI. Your set is on the way!",
+        primary: "Back to home",
+        secondary: "Contact support",
+      },
+      cancel: {
+        title: "Checkout canceled",
+        body: "No worries. You can complete your order anytime.",
+        primary: "Return to product",
+        secondary: "Back to home",
+      },
+    },
   },
   tr: {
     hero: {
@@ -212,6 +228,8 @@ export const strings = {
       subtitle: "3–8 yaş için güvenli, hareketli ve premium hediye-hazır oyun seti.",
       reviewsLabel: "değerlendirme",
       microCta: "Hızlı gönderim • 30 gün iade • Güvenli ödeme",
+      valueLine: "3–8 yaş için en iyi değer.",
+      urgencyLine: "Bir sonraki parti yakında kargoda.",
       shippingNote: "Hızlı gönderim • Kolay iade • Güvenli ödeme",
       delivery: "Tahmini teslimat: 2–5 iş günü",
       freeShipping: "$80 üzeri ücretsiz kargo",
@@ -409,6 +427,20 @@ export const strings = {
       errorTitle: "Ödeme kullanılamıyor",
       errorBody: "Stripe henüz bağlı değil. Lütfen daha sonra tekrar deneyin.",
       close: "Kapat",
+    },
+    status: {
+      success: {
+        title: "Sipariş onaylandı",
+        body: "JUMVI'yi seçtiğiniz için teşekkürler. Setiniz yolda!",
+        primary: "Ana sayfa",
+        secondary: "Destek",
+      },
+      cancel: {
+        title: "Ödeme iptal edildi",
+        body: "Sorun değil. Dilediğiniz zaman geri dönüp tamamlayabilirsiniz.",
+        primary: "Ürüne dön",
+        secondary: "Ana sayfa",
+      },
     },
   },
 } as const;

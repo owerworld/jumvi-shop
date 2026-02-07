@@ -25,6 +25,11 @@ export default function Hero({ onAddToCart, onOpenLightbox, galleryItems }: Hero
             {product.rating} ★ ({product.reviewCount} {t.hero.reviewsLabel})
           </span>
         </div>
+        <div className="text-xs text-[color:var(--muted)]">
+          <span className="font-semibold text-[color:var(--text)]">{t.hero.valueLine}</span>
+          <span className="mx-2">•</span>
+          <span>{t.hero.urgencyLine}</span>
+        </div>
         <div className="flex flex-wrap gap-2">
           {t.badges.map((badge) => (
             <span key={badge} className="badge">
