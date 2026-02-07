@@ -10,7 +10,7 @@ export default function Hero({ onAddToCart }: HeroProps) {
     <section className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.1fr_0.9fr]">
       <div className="space-y-6">
         <p className="eyebrow">JUMVI Shop</p>
-        <h1 className="title-xl text-[color:var(--text)]">JUMVI Toss & Catch Set</h1>
+        <h1 className="title-xl text-[color:var(--text)] leading-tight">JUMVI Toss & Catch Set</h1>
         <p className="body-md">
           3–8 yaş için güvenli, hareketli ve premium hediye-hazır oyun seti.
         </p>

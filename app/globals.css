@@ -73,11 +73,20 @@ body {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3aa5f1] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2;
+  @apply inline-flex items-center justify-center rounded-[20px] bg-brand-blue px-6 py-3 text-sm font-semibold text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2;
+  box-shadow: 0 10px 20px rgba(79, 179, 255, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: #3ea9f2;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(11, 18, 32, 0.18);
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2;
+  @apply inline-flex items-center justify-center rounded-[20px] px-6 py-3 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2;
   background: var(--surface);
   color: var(--text);
   border: 1px solid var(--border);
