@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import MissionsPreview from "@/components/MissionsPreview";
 import PageHeader from "@/components/PageHeader";
 import content from "@/lib/content";
@@ -41,6 +42,21 @@ export default function MissionsPage() {
               <li>Oyun bulusmalari ve siniflar icin ideal</li>
             </ul>
           </div>
+          <div className="card flex items-center justify-center p-6">
+            <div className="relative h-80 w-full overflow-hidden rounded-xl2 bg-white/70">
+              <Image
+                src="/phoneqr.png"
+                alt="Telefon ekraninda JUMVI gorevleri"
+                fill
+                sizes="(max-width: 1024px) 90vw, 480px"
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section-pad pt-0">
+        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
           <div className="card p-6">
             <h2 className="text-xl font-semibold">Cocuklar ne kazanir</h2>
             <p className="mt-2 body-sm">
@@ -59,6 +75,26 @@ export default function MissionsPage() {
                   {item}
                 </span>
               ))}
+            </div>
+          </div>
+          <div className="card p-6">
+            <h2 className="text-xl font-semibold">QR gorev akisi</h2>
+            <p className="mt-2 body-sm">
+              Mobil ekran rehberidir. Tarama sonrasi adim adim yonlendirir.
+            </p>
+            <div className="mt-4 grid gap-3 text-sm text-brand-ink/70">
+              <div className="flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-brand-blue/60" />
+                <span>Kolay baslangic ve hizli kurulum</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-brand-green/60" />
+                <span>Gorevler kisa ve net adimlarla</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-brand-orange/60" />
+                <span>Ekran hafif, hareket odakli</span>
+              </div>
             </div>
           </div>
         </div>
