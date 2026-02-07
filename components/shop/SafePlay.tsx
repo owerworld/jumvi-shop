@@ -1,8 +1,8 @@
 export default function SafePlay() {
   const rules = [
-    "Yüz seviyesinin altına atın",
-    "1–3 metre mesafede oynayın",
-    "Ebeveyn gözetimi önerilir",
+    { text: "Yüz seviyesinin altına atın", color: "bg-brand-blue/70" },
+    { text: "1–3 metre mesafede oynayın", color: "bg-brand-green/70" },
+    { text: "Ebeveyn gözetimi önerilir", color: "bg-brand-orange/70" },
   ];
 
   return (
@@ -11,8 +11,9 @@ export default function SafePlay() {
         <h2 className="title-md text-[color:var(--text)]">Güvenli oyun</h2>
         <div className="mt-6 grid gap-3">
           {rules.map((rule) => (
-            <div key={rule} className="surface rounded-2xl border border-black/5 px-4 py-3 text-sm text-[color:var(--muted)]">
-              {rule}
+            <div key={rule.text} className="surface flex items-center gap-3 rounded-2xl border border-black/5 px-4 py-3 text-sm text-[color:var(--muted)]">
+              <span className={`h-2.5 w-2.5 rounded-full ${rule.color}`} />
+              <span>{rule.text}</span>
             </div>
           ))}
         </div>

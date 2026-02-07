@@ -34,9 +34,17 @@ export default function CartDrawer({ open, qty, onClose, onQtyChange }: CartDraw
           </button>
         </div>
         <div className="mt-6 rounded-2xl bg-white/70 p-4">
-          <div className="text-sm font-semibold text-[color:var(--text)]">JUMVI Toss & Catch Set</div>
-          <div className="mt-2 flex items-center justify-between text-sm text-[color:var(--muted)]">
-            <span>${product.price}</span>
+          <div className="flex items-center gap-4">
+            <div className="h-14 w-14 overflow-hidden rounded-xl2 border border-black/10 bg-white/80">
+              <img src="/jumvi-hero.png" alt="JUMVI ürün görseli" className="h-full w-full object-contain" />
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-semibold text-[color:var(--text)]">JUMVI Toss & Catch Set</div>
+              <div className="mt-1 text-xs text-[color:var(--muted)]">${product.price}</div>
+            </div>
+          </div>
+          <div className="mt-4 flex items-center justify-between text-sm text-[color:var(--muted)]">
+            <span>Adet</span>
             <div className="flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-2 py-1">
               <button
                 type="button"
