@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://jumvi.com";
+const baseUrl = "https://jumvi.co";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

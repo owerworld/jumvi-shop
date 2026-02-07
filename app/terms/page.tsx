@@ -16,7 +16,7 @@ export default function TermsPage() {
             JUMVI satin aldiginizda, bu sitede belirtilen odeme, gonderim ve iade kosullarini kabul etmis olursunuz.
           </p>
           <p>
-            Sorulariniz icin support@jumvi.com adresine yazabilirsiniz.
+            Sorulariniz icin support@jumvi.co adresine yazabilirsiniz.
           </p>
         </div>
       </section>

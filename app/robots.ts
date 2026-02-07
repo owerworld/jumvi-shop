@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://jumvi.com/sitemap.xml",
+    sitemap: "https://jumvi.co/sitemap.xml",
   };
 }

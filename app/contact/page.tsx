@@ -20,7 +20,7 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
           <div className="card p-6">
             <h2 className="text-lg font-semibold">E-posta</h2>
-            <p className="mt-2 body-sm">support@jumvi.com</p>
+            <p className="mt-2 body-sm">support@jumvi.co</p>
           </div>
           <div className="card p-6">
             <h2 className="text-lg font-semibold">WhatsApp</h2>

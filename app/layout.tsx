@@ -15,11 +15,32 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "JUMVI | Oyna. Ogren. Hareket et.",
   description: "QR gorevleriyle premium aktif oyun kiti.",
-  metadataBase: new URL("https://jumvi.com"),
+  metadataBase: new URL("https://jumvi.co"),
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     title: "JUMVI | Oyna. Ogren. Hareket et.",
     description: "QR gorevleriyle premium aktif oyun kiti.",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "JUMVI Oyun Kiti",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JUMVI | Oyna. Ogren. Hareket et.",
+    description: "QR gorevleriyle premium aktif oyun kiti.",
+    images: ["/og.png"],
   },
 };
 

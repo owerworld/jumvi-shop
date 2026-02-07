@@ -16,7 +16,7 @@ export default function PrivacyPage() {
             Siparisleri islemek ve JUMVI deneyimini gelistirmek icin gereken minimum bilgiyi toplariz. Kisisel verileri asla satmayiz.
           </p>
           <p>
-            Sorulariniz icin support@jumvi.com adresinden bize ulasabilirsiniz.
+            Sorulariniz icin support@jumvi.co adresinden bize ulasabilirsiniz.
           </p>
         </div>
       </section>
