@@ -71,6 +71,7 @@ export default function CartDrawer({ open, qty, onClose, onQtyChange }: CartDraw
         <button type="button" className="btn-primary mt-6 w-full rounded-[18px] py-3 text-sm">
           Checkout
         </button>
+        <p className="mt-3 text-xs text-[color:var(--muted)]">Güvenli ödeme sayfasına yönlendirilirsiniz.</p>
       </aside>
     </div>
   );

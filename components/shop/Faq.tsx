@@ -9,7 +9,7 @@ type FaqItem = {
 const faqs: FaqItem[] = [
   {
     q: "Ev içinde oynanır mı?",
-    a: "Evet. Soft toplar ev içi kullanım için tasarlanmıştır.",
+    a: "Evet, soft toplar ev içi kullanım için uygundur.",
   },
   {
     q: "Kaç yaş için uygundur?",
@@ -17,17 +17,17 @@ const faqs: FaqItem[] = [
   },
   {
     q: "QR görevleri nasıl çalışır?",
-    a: "Karttaki QR kodu bir kez tarayın, görevleri telefon üzerinden takip edin.",
+    a: "QR kodu bir kez tarayın, görevleri ekrandan takip edin.",
   },
   {
     q: "Toplar güvenli mi?",
-    a: "Toplar yumuşak malzemeden üretilmiştir ve çocuk kullanımına uygundur.",
+    a: "Yumuşak malzeme ve düşük hız için tasarlanmıştır.",
   },
   {
     q: "İade süreci nasıl?",
     a: (
       <span>
-        Detaylar için <Link href="#destek" className="underline">Destek</Link> bölümüne göz atın.
+        Detaylar için <Link href="#destek" className="underline">Destek</Link> bölümüne bakın.
       </span>
     ),
   },
@@ -35,7 +35,7 @@ const faqs: FaqItem[] = [
     q: "Kargo ne kadar sürer?",
     a: (
       <span>
-        Bölgeye göre değişebilir. Güncel bilgi için <Link href="#destek" className="underline">Destek</Link> bölümüne bakın.
+        Bölgeye göre değişebilir. Güncel bilgi için <Link href="#destek" className="underline">Destek</Link> bölümünü inceleyin.
       </span>
     ),
   },

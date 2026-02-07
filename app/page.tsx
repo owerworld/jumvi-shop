@@ -4,11 +4,13 @@ import { useState } from "react";
 import { product } from "@/lib/product";
 import Header from "@/components/shop/Header";
 import Hero from "@/components/shop/Hero";
+import TrustBar from "@/components/shop/TrustBar";
 import Benefits from "@/components/shop/Benefits";
 import HowItWorks from "@/components/shop/HowItWorks";
 import InsideBox from "@/components/shop/InsideBox";
 import SafePlay from "@/components/shop/SafePlay";
 import Faq from "@/components/shop/Faq";
+import Testimonials from "@/components/shop/Testimonials";
 import FinalCta from "@/components/shop/FinalCta";
 import CartDrawer from "@/components/shop/CartDrawer";
 import Footer from "@/components/shop/Footer";
@@ -27,10 +29,12 @@ export default function HomePage() {
       <Header cartCount={qty} onCartOpen={() => setCartOpen(true)} />
       <main id="urun" className="section-pad pt-10">
         <Hero onAddToCart={handleAddToCart} />
+        <TrustBar />
         <Benefits />
         <HowItWorks />
         <InsideBox />
         <SafePlay />
+        <Testimonials />
         <Faq />
         <FinalCta price={product.price} onAddToCart={handleAddToCart} />
       </main>
