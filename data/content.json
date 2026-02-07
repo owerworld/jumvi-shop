@@ -1,0 +1,108 @@
+{
+  "brand": {
+    "name": "JUMVI",
+    "tagline": "Play. Learn. Move.",
+    "subtitle": "Active play missions for curious kids",
+    "description": "A premium, kid-friendly kit that blends movement, learning, and joyful challenges."
+  },
+  "ctas": {
+    "buy": "Buy now",
+    "missions": "See missions"
+  },
+  "trustBar": [
+    "Safety-tested materials",
+    "Ages 3-8",
+    "Gift-ready packaging",
+    "QR missions inside"
+  ],
+  "insideBox": [
+    {
+      "title": "4 paddles",
+      "desc": "Lightweight, grippy, kid-safe"
+    },
+    {
+      "title": "4 balls",
+      "desc": "Soft bounce, indoor friendly"
+    },
+    {
+      "title": "Mesh bag",
+      "desc": "Easy carry and storage"
+    },
+    {
+      "title": "QR insert",
+      "desc": "Instant missions & tips"
+    }
+  ],
+  "howItWorks": [
+    {
+      "title": "Scan",
+      "desc": "Open the QR to get your mission"
+    },
+    {
+      "title": "Play",
+      "desc": "Follow the challenge and move together"
+    },
+    {
+      "title": "Finish",
+      "desc": "Celebrate and unlock the next one"
+    }
+  ],
+  "missions": [
+    {
+      "title": "Color Dash",
+      "desc": "Find and touch 3 objects that match the card color."
+    },
+    {
+      "title": "Bounce Count",
+      "desc": "Bounce the ball 10 times without dropping."
+    },
+    {
+      "title": "Quiet Ninja",
+      "desc": "Move across the room without making sound."
+    },
+    {
+      "title": "Mirror Moves",
+      "desc": "Copy your partner's paddle poses."
+    },
+    {
+      "title": "Target Tap",
+      "desc": "Tap 5 targets in order as fast as you can."
+    },
+    {
+      "title": "Animal Steps",
+      "desc": "Hop like a bunny, walk like a bear, and tip-toe like a cat."
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Seda",
+      "text": "Beautiful packaging and the missions are genuinely fun. My kids ask for it every day."
+    },
+    {
+      "name": "Murat",
+      "text": "Finally an activity that gets them moving without a screen." 
+    },
+    {
+      "name": "Elif",
+      "text": "Feels premium, easy to set up, and perfect for playdates." 
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is it safe for indoor play?",
+      "a": "Yes. The balls are soft-bounce and the paddles are lightweight with smooth edges."
+    },
+    {
+      "q": "Do missions require a phone?",
+      "a": "You only need a phone to scan the QR once. After that, you can play screen-free."
+    },
+    {
+      "q": "What's the age range?",
+      "a": "Designed for ages 3-8, with missions that scale for older siblings too."
+    }
+  ],
+  "footer": {
+    "social": ["Instagram", "TikTok", "YouTube"],
+    "legal": ["Privacy", "Terms", "Shipping & Returns"]
+  }
+}

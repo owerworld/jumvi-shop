@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-brand-ink antialiased;
+}
+
+.section-pad {
+  @apply px-6 py-16 sm:px-10 lg:px-16;
+}
+
+.gradient-bg {
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(79, 179, 255, 0.25), transparent 60%),
+    radial-gradient(1000px 500px at 90% 10%, rgba(151, 215, 0, 0.22), transparent 55%),
+    radial-gradient(900px 500px at 60% 90%, rgba(255, 106, 0, 0.18), transparent 60%);
+}
+
+.card {
+  @apply rounded-xl2 border border-black/5 bg-white/80 shadow-soft backdrop-blur;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3aa5f1] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-brand-ink/10 bg-white px-6 py-3 text-sm font-semibold text-brand-ink transition hover:border-brand-ink/20 hover:bg-brand-mist focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2;
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 rounded-full border border-black/5 bg-brand-mist px-3 py-1 text-xs font-semibold text-brand-ink/80;
+}
