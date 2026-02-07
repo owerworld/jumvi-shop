@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect } from "react";
 import { product } from "@/lib/product";
 
@@ -45,8 +46,14 @@ export default function CartDrawer({ open, qty, onClose, onQtyChange }: CartDraw
         ) : (
           <div className="mt-6 rounded-2xl bg-white/70 p-4">
             <div className="flex items-center gap-4">
-              <div className="h-14 w-14 overflow-hidden rounded-xl2 border border-black/10 bg-white/80">
-                <img src="/jumvi-hero.png" alt="JUMVI ürün görseli" className="h-full w-full object-contain" />
+              <div className="relative h-14 w-14 overflow-hidden rounded-xl2 border border-black/10 bg-white/80">
+                <Image
+                  src="/jumvi-hero.png"
+                  alt="JUMVI ürün görseli"
+                  fill
+                  sizes="56px"
+                  className="object-contain"
+                />
               </div>
               <div className="flex-1">
                 <div className="text-sm font-semibold text-[color:var(--text)]">JUMVI Toss & Catch Set</div>
@@ -92,7 +99,7 @@ export default function CartDrawer({ open, qty, onClose, onQtyChange }: CartDraw
               </p>
             </div>
             <button type="button" className="btn-primary mt-6 w-full rounded-[18px] py-3 text-sm">
-              Checkout
+              Ödemeye geç
             </button>
             <p className="mt-3 text-xs text-[color:var(--muted)]">Güvenli ödeme sayfasına yönlendirilirsiniz.</p>
           </>

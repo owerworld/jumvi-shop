@@ -33,6 +33,9 @@ export default function HowItWorks() {
               loading="lazy"
             />
           </div>
+          <p className="mt-3 text-xs text-[color:var(--muted)]">
+            Ev içi kullanım için ideal, görevleri telefondan takip edin.
+          </p>
         </div>
       </div>
     </section>

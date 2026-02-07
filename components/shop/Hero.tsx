@@ -19,6 +19,9 @@ export default function Hero({ onAddToCart }: HeroProps) {
           <span>•</span>
           <span>{product.rating} ★ ({product.reviewCount} değerlendirme)</span>
         </div>
+        <p className="text-xs text-[color:var(--muted)]">
+          Kargo: $50 üzeri ücretsiz • 30 gün iade
+        </p>
         <div className="flex flex-wrap gap-2">
           {[
             "Yumuşak Toplar",
