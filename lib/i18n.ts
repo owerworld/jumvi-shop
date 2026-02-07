@@ -174,6 +174,31 @@ export const strings = {
       cta: "Add to Cart",
       returns: "30-day returns",
     },
+    story: {
+      title: "Why families choose JUMVI",
+      materials: {
+        title: "Materials & Safety",
+        body: "Soft-touch paddles and lightweight balls designed for comfortable play.",
+        bullets: ["Soft materials", "Lightweight and kid-friendly", "Designed for ages 3–8"],
+      },
+      skills: {
+        title: "Skill Outcomes",
+        body: "Builds coordination, timing, and confidence through quick wins.",
+        bullets: ["Hand-eye coordination", "Reaction speed", "Active play habits"],
+      },
+      gift: {
+        title: "Gift-ready packaging",
+        body: "Premium box presentation makes it easy to gift.",
+        bullets: ["Premium box", "Ready to gift", "Clean, minimal design"],
+      },
+    },
+    checkout: {
+      title: "Secure checkout",
+      redirecting: "Redirecting to secure checkout...",
+      errorTitle: "Checkout unavailable",
+      errorBody: "Stripe is not connected yet. Please try again later.",
+      close: "Close",
+    },
   },
   tr: {
     hero: {
@@ -349,6 +374,31 @@ export const strings = {
     sticky: {
       cta: "Sepete Ekle",
       returns: "30 gün iade",
+    },
+    story: {
+      title: "Ailelerin JUMVI'yi seçme nedeni",
+      materials: {
+        title: "Malzeme & Güvenlik",
+        body: "Yumuşak paddle yüzeyi ve hafif toplar ile güvenli oyun.",
+        bullets: ["Yumuşak malzeme", "Hafif ve çocuk dostu", "3–8 yaş için tasarım"],
+      },
+      skills: {
+        title: "Beceri Kazanımları",
+        body: "Koordinasyon, zamanlama ve özgüveni destekler.",
+        bullets: ["El-göz koordinasyonu", "Hızlı refleks", "Aktif oyun alışkanlığı"],
+      },
+      gift: {
+        title: "Hediye-hazır kutu",
+        body: "Premium kutu sunumu ile kolay hediye.",
+        bullets: ["Premium kutu", "Hediye için hazır", "Sade ve şık tasarım"],
+      },
+    },
+    checkout: {
+      title: "Güvenli ödeme",
+      redirecting: "Güvenli ödeme sayfasına yönlendiriliyor...",
+      errorTitle: "Ödeme kullanılamıyor",
+      errorBody: "Stripe henüz bağlı değil. Lütfen daha sonra tekrar deneyin.",
+      close: "Kapat",
     },
   },
 } as const;

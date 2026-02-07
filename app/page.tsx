@@ -23,6 +23,8 @@ import StickyBuyBar from "@/components/shop/StickyBuyBar";
 import Lightbox from "@/components/shop/Lightbox";
 import type { GalleryItem } from "@/components/shop/Gallery";
 import JsonLd from "@/components/shop/JsonLd";
+import StoryBlocks from "@/components/shop/StoryBlocks";
+import CheckoutModal from "@/components/shop/CheckoutModal";
 
 const galleryItems: GalleryItem[] = [
   { id: "main", src: "/jumvi-hero.png", alt: t.images.heroAlt },
@@ -35,6 +37,8 @@ export default function HomePage() {
   const [cartOpen, setCartOpen] = useState(false);
   const [qty, setQty] = useState(1);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [checkoutStatus, setCheckoutStatus] = useState<"idle" | "redirecting" | "error">("idle");
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   const lightboxItem = useMemo(() => (lightboxIndex === null ? undefined : galleryItems[lightboxIndex]), [lightboxIndex]);
 
@@ -49,7 +53,25 @@ export default function HomePage() {
   };
 
   const handleCheckout = () => {
+    setCheckoutOpen(true);
+    setCheckoutStatus("redirecting");
     track("begin_checkout", { value: product.price * qty, currency: "USD" });
+
+    fetch("/api/checkout", { method: "POST" })
+      .then(async (res) => {
+        if (!res.ok) {
+          throw new Error("checkout_unavailable");
+        }
+        const data = await res.json();
+        if (data?.url) {
+          window.location.href = data.url;
+          return;
+        }
+        throw new Error("checkout_unavailable");
+      })
+      .catch(() => {
+        setCheckoutStatus("error");
+      });
   };
 
   return (
@@ -65,6 +87,7 @@ export default function HomePage() {
         <TrustBar />
         <Benefits />
         <SocialProof />
+        <StoryBlocks />
         <HowItWorks />
         <InsideBox />
         <SafePlay />
@@ -83,6 +106,7 @@ export default function HomePage() {
         onQtyChange={setQty}
         onCheckout={handleCheckout}
       />
+      <CheckoutModal open={checkoutOpen} status={checkoutStatus} onClose={() => setCheckoutOpen(false)} />
       <Lightbox open={lightboxIndex !== null} item={lightboxItem} onClose={() => setLightboxIndex(null)} />
     </div>
   );
