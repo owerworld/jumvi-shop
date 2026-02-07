@@ -29,7 +29,7 @@ export default function StickyBuyBar({ price, rating, onAddToCart }: StickyBuyBa
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-30 border-t border-black/5 bg-[color:var(--surface)] px-5 py-3 backdrop-blur transition-all motion-reduce:transition-none md:bottom-4 md:mx-auto md:max-w-6xl md:rounded-2xl md:border ${
+      className={`sticky-safe fixed inset-x-0 bottom-0 z-30 border-t border-black/5 bg-[color:var(--surface)] px-5 py-3 backdrop-blur transition-all motion-reduce:transition-none md:bottom-4 md:mx-auto md:max-w-6xl md:rounded-2xl md:border ${
         visible ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
       aria-hidden={!visible}

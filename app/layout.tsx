@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JUMVI | Play. Learn. Move.",
-  description: "Premium active play kit with QR missions for kids.",
-  keywords: ["JUMVI", "kids play kit", "QR missions", "active play", "gift", "ages 3-8"],
+  title: "JUMVI Toss & Catch Set | Premium Active Play",
+  description: "Premium, gift-ready toss & catch set with QR missions for ages 3–8.",
+  keywords: ["JUMVI", "toss and catch set", "QR missions", "active play", "gift-ready", "ages 3-8"],
   metadataBase: new URL("https://jumvi.co"),
   alternates: {
     canonical: "/",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "JUMVI | Play. Learn. Move.",
-    description: "Premium active play kit with QR missions for kids.",
+    title: "JUMVI Toss & Catch Set | Premium Active Play",
+    description: "Premium, gift-ready toss & catch set with QR missions for ages 3–8.",
     type: "website",
     siteName: "JUMVI",
     images: [
@@ -35,14 +35,14 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "JUMVI Oyun Kiti",
+        alt: "JUMVI Toss & Catch Set",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "JUMVI | Play. Learn. Move.",
-    description: "Premium active play kit with QR missions for kids.",
+    title: "JUMVI Toss & Catch Set | Premium Active Play",
+    description: "Premium, gift-ready toss & catch set with QR missions for ages 3–8.",
     images: ["/og.png"],
   },
 };

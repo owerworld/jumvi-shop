@@ -64,6 +64,9 @@ export default function CartDrawer({ open, qty, onClose, onQtyChange, onCheckout
           <div className="mt-6 rounded-2xl bg-white/70 p-6 text-center">
             <p className="text-sm font-semibold text-[color:var(--text)]">{t.cart.empty}</p>
             <p className="mt-2 text-xs text-[color:var(--muted)]">{t.cart.emptyNote}</p>
+            <a href="#urun" className="mt-4 inline-flex text-xs font-semibold text-brand-blue underline">
+              {t.sticky.cta}
+            </a>
           </div>
         ) : (
           <div className="mt-6 rounded-2xl bg-white/70 p-4">
