@@ -27,6 +27,7 @@ export default function InsideBox() {
                 fill
                 sizes="(max-width: 1024px) 90vw, 480px"
                 className="object-contain"
+                loading="lazy"
               />
             </div>
           </div>

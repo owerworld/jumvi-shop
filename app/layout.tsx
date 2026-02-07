@@ -14,8 +14,12 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "JUMVI | Oyna. Ogren. Hareket et.",
-  description: "QR gorevleriyle premium aktif oyun kiti.",
+  description: "QR gorevleriyle premium aktif oyun kiti. Cocuklar icin hareketli, ekransiz oyun.",
+  keywords: ["JUMVI", "cocuk oyun kiti", "QR gorev", "aktif oyun", "hediye", "3-8 yas"],
   metadataBase: new URL("https://jumvi.co"),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -25,8 +29,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "JUMVI | Oyna. Ogren. Hareket et.",
-    description: "QR gorevleriyle premium aktif oyun kiti.",
+    description: "QR gorevleriyle premium aktif oyun kiti. Cocuklar icin hareketli, ekransiz oyun.",
     type: "website",
+    siteName: "JUMVI",
     images: [
       {
         url: "/og.png",

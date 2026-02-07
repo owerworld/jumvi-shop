@@ -3,16 +3,16 @@
     "name": "JUMVI",
     "tagline": "Oyna. Ogren. Hareket et.",
     "subtitle": "Merakli cocuklar icin aktif oyun gorevleri",
-    "description": "Hareketi, ogrenmeyi ve keyifli meydan okumayi bir araya getiren premium oyun kiti."
+    "description": "Hareket, ogrenme ve keyifli meydan okumayi bir araya getiren premium oyun kiti."
   },
   "ctas": {
     "buy": "Satin al",
     "missions": "Gorevleri gor"
   },
   "trustBar": [
-    "Guvenlik testlerinden gecti",
-    "3-8 yas icin",
-    "Hediye hazir paket",
+    "Guvenlik testli",
+    "3-8 yas",
+    "Hediye hazir",
     "QR gorev sistemi"
   ],
   "insideBox": [
@@ -43,8 +43,8 @@
       "desc": "Meydani takip et ve hareket et"
     },
     {
-      "title": "Bitir",
-      "desc": "Kutla ve yeni goreve gec"
+      "title": "Kutla",
+      "desc": "Bitir ve yeni goreve gec"
     }
   ],
   "missions": [

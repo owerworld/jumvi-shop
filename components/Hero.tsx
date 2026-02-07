@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="section-pad gradient-bg">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="space-y-6">
-          <span className="badge">Premium aktif oyun kiti</span>
+          <span className="badge">Premium hareketli oyun kiti</span>
           <h1 className="title-xl">{content.brand.tagline}</h1>
           <p className="body-md">{content.brand.description}</p>
           <div className="flex flex-wrap gap-3">

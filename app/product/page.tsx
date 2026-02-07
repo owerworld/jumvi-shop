@@ -52,12 +52,12 @@ export default function ProductPage() {
                 fill
                 sizes="(max-width: 1024px) 90vw, 420px"
                 className="object-contain"
-                priority
+                loading="lazy"
               />
             </div>
             <div className="mt-6 space-y-4">
               <BuyButton />
-              <p className="text-xs text-brand-ink/60">Satin alma yakinda aktif olacak.</p>
+              <p className="text-xs text-brand-ink/60">Satin alma yakinda.</p>
             </div>
           </div>
         </div>
