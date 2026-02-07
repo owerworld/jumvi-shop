@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-plus",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "JUMVI | Oyna. Ogren. Hareket et.",
-  description: "QR gorevleriyle premium aktif oyun kiti. Cocuklar icin hareketli, ekransiz oyun.",
-  keywords: ["JUMVI", "cocuk oyun kiti", "QR gorev", "aktif oyun", "hediye", "3-8 yas"],
+  title: "JUMVI | Oyna. Öğren. Hareket et.",
+  description: "QR görevleriyle premium aktif oyun kiti. Çocuklar için hareketli, ekransız oyun.",
+  keywords: ["JUMVI", "çocuk oyun kiti", "QR görev", "aktif oyun", "hediye", "3-8 yaş"],
   metadataBase: new URL("https://jumvi.co"),
   alternates: {
     canonical: "/",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "JUMVI | Oyna. Ogren. Hareket et.",
-    description: "QR gorevleriyle premium aktif oyun kiti. Cocuklar icin hareketli, ekransiz oyun.",
+    title: "JUMVI | Oyna. Öğren. Hareket et.",
+    description: "QR görevleriyle premium aktif oyun kiti. Çocuklar için hareketli, ekransız oyun.",
     type: "website",
     siteName: "JUMVI",
     images: [
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JUMVI | Oyna. Ogren. Hareket et.",
-    description: "QR gorevleriyle premium aktif oyun kiti.",
+    title: "JUMVI | Oyna. Öğren. Hareket et.",
+    description: "QR görevleriyle premium aktif oyun kiti.",
     images: ["/og.png"],
   },
 };
@@ -53,7 +53,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={plusJakarta.variable}>
+    <html lang="tr" className={inter.variable}>
+      <head>
+        <meta charSet="utf-8" />
+      </head>
       <body className="font-sans">
         <Analytics />
         <main>{children}</main>

@@ -1,0 +1,61 @@
+import Image from "next/image";
+import { product } from "@/lib/product";
+
+type HeroProps = {
+  onAddToCart: () => void;
+};
+
+export default function Hero({ onAddToCart }: HeroProps) {
+  return (
+    <section className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="space-y-6">
+        <p className="eyebrow">JUMVI Shop</p>
+        <h1 className="title-xl text-[color:var(--text)]">JUMVI Toss & Catch Set</h1>
+        <p className="body-md">
+          3–8 yaş için güvenli, hareketli ve premium hediye-hazır oyun seti.
+        </p>
+        <div className="flex items-center gap-4 text-sm text-[color:var(--muted)]">
+          <span className="text-3xl font-semibold text-[color:var(--text)]">${product.price}</span>
+          <span>•</span>
+          <span>{product.rating} ★ ({product.reviewCount} değerlendirme)</span>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {[
+            "Yumuşak Toplar",
+            "Premium Hediye Kutusu",
+            "QR Görevleri",
+          ].map((badge) => (
+            <span key={badge} className="badge">
+              {badge}
+            </span>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <button type="button" className="btn-primary rounded-[18px] px-6 py-3 text-sm" onClick={onAddToCart}>
+            Sepete Ekle
+          </button>
+          <a href="#inside" className="btn-secondary rounded-[18px] px-6 py-3 text-sm">
+            Kutunun İçinde
+          </a>
+        </div>
+        <p className="text-xs text-[color:var(--muted)]">
+          Hızlı gönderim • Kolay iade • Güvenli ödeme
+        </p>
+      </div>
+      <div className="glass glass-surface relative rounded-[28px] p-6">
+        <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-blue/20 blur-3xl" />
+        <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-brand-green/20 blur-3xl" />
+        <div className="relative flex h-full min-h-[320px] items-center justify-center rounded-2xl bg-white/70 p-6">
+          <Image
+            src="/jumvi-hero.png"
+            alt="JUMVI Toss & Catch Set ürün görseli"
+            width={520}
+            height={520}
+            className="h-auto w-full object-contain"
+            priority
+          />
+        </div>
+      </div>
+    </section>
+  );
+}

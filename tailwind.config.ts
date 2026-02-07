@@ -26,7 +26,17 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-plus)", "system-ui", "sans-serif"],
+        sans: [
+          "var(--font-inter)",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "Noto Sans",
+          "sans-serif",
+        ],
       },
       boxShadow: {
         soft: "0 12px 40px rgba(11, 18, 32, 0.12)",
