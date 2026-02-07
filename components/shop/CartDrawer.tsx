@@ -10,6 +10,8 @@ type CartDrawerProps = {
 
 export default function CartDrawer({ open, qty, onClose, onQtyChange }: CartDrawerProps) {
   const subtotal = product.price * qty;
+  const freeShippingTarget = 80;
+  const progress = Math.min(100, Math.round((subtotal / freeShippingTarget) * 100));
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -83,9 +85,11 @@ export default function CartDrawer({ open, qty, onClose, onQtyChange }: CartDraw
             </div>
             <div className="mt-6">
               <div className="h-2 rounded-full bg-white/60">
-                <div className="h-2 w-2/3 rounded-full bg-brand-green" />
+                <div className="h-2 rounded-full bg-brand-green" style={{ width: `${progress}%` }} />
               </div>
-              <p className="mt-2 text-xs text-[color:var(--muted)]">Ücretsiz kargo için $80 hedefi.</p>
+              <p className="mt-2 text-xs text-[color:var(--muted)]">
+                Ücretsiz kargo için ${freeShippingTarget} hedefi. ({progress}%)
+              </p>
             </div>
             <button type="button" className="btn-primary mt-6 w-full rounded-[18px] py-3 text-sm">
               Checkout

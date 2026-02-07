@@ -30,6 +30,10 @@ export default function Hero({ onAddToCart }: HeroProps) {
             </span>
           ))}
         </div>
+        <div className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
+          <span className="rounded-full border border-black/5 bg-white/60 px-3 py-1">CPC/ASTM süreçleri planlanıyor</span>
+          <span className="rounded-full border border-black/5 bg-white/60 px-3 py-1">Güvenli malzeme</span>
+        </div>
         <div className="flex flex-wrap gap-3">
           <button type="button" className="btn-primary rounded-[18px] px-6 py-3 text-sm" onClick={onAddToCart}>
             Sepete Ekle
