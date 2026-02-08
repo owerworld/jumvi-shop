@@ -8,6 +8,7 @@ export const strings = {
       microCta: "Ships fast • 30-day returns • Secure checkout",
       valueLine: "Best value for ages 3–8.",
       urgencyLine: "Next batch ships soon.",
+      trustBadges: ["30-day free returns", "Secure checkout", "Fast US shipping"],
       shippingNote: "Fast shipping • Easy returns • Secure checkout",
       delivery: "Estimated delivery: 2–5 business days",
       freeShipping: "Free shipping over $80",
@@ -30,7 +31,7 @@ export const strings = {
     },
     guarantee: {
       title: "Try it for 30 days",
-      subtitle: "Not a fit? Returns are easy.",
+      subtitle: "If it’s not a fit, returns are easy and hassle‑free.",
     },
     benefits: {
       title: "Why JUMVI?",
@@ -230,6 +231,7 @@ export const strings = {
       microCta: "Hızlı gönderim • 30 gün iade • Güvenli ödeme",
       valueLine: "3–8 yaş için en iyi değer.",
       urgencyLine: "Bir sonraki parti yakında kargoda.",
+      trustBadges: ["30 gün ücretsiz iade", "Güvenli ödeme", "Hızlı US gönderim"],
       shippingNote: "Hızlı gönderim • Kolay iade • Güvenli ödeme",
       delivery: "Tahmini teslimat: 2–5 iş günü",
       freeShipping: "$80 üzeri ücretsiz kargo",
@@ -252,7 +254,7 @@ export const strings = {
     },
     guarantee: {
       title: "30 gün dene, memnun kalmazsan iade",
-      subtitle: "Risk almadan deneyin. Kolay iade süreci.",
+      subtitle: "Memnun kalmazsan kolay ve zahmetsiz iade.",
     },
     benefits: {
       title: "Neden JUMVI?",
