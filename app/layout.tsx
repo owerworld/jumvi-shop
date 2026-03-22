@@ -60,6 +60,9 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <head>
         <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="theme-color" content="#0a1628" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body className="font-sans">
         {gaId ? (
@@ -103,7 +106,7 @@ export default function RootLayout({
             `}
           </Script>
         ) : null}
-        <main>{children}</main>
+        <div className="main-container">{children}</div>
       </body>
     </html>
   );
