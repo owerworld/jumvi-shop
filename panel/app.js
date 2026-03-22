@@ -8,6 +8,8 @@ const THEME_KEY = "jumvi_theme";
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 const editContext = { invoices: null, payments: null };
+const PAGE_SIZE = 50;
+const showAll = {};
 let plannedExpenseEditId = null;
 
 function setEditContext(type, id) {
@@ -945,7 +947,6 @@ function scheduleDelete(type, id, idx) {
     }, 3500)
   };
 
-  saveState();
   showUndoToast(t("messages.deleted"), async () => {
     if (!pendingDelete) return;
     clearTimeout(pendingDelete.timer);
@@ -1391,7 +1392,7 @@ function renderSuppliers(panel) {
     <div class="section">
       <div class="section-header">
         <h2>${t("suppliers.title")}</h2>
-        <p>${t("suppliers.desc")}</p>
+        <p>${t("suppliers.desc")} <span class="result-count">${sorted.length} kayıt</span></p>
       </div>
       <div class="panel-grid">
         <div class="panel-side">
@@ -1508,6 +1509,8 @@ function renderInvoices(panel) {
   const sort = getSort("invoices", "date");
   const sorted = sortList(list, sort, { date: "date", amountUsd: "number", number: "text", status: "text" });
   const totalUsd = sorted.reduce((sum, i) => sum + (i.amountUsd || 0), 0);
+  const invoiceShowAll = showAll["invoices"] || globalSearchTerm;
+  const pagedInvoices = invoiceShowAll ? sorted : sorted.slice(0, PAGE_SIZE);
   const recurringMap = new Map();
   sorted.forEach((i) => {
     const key = `${i.supplierId || "none"}|${Number(i.amountUsd || 0).toFixed(2)}`;
@@ -1519,7 +1522,7 @@ function renderInvoices(panel) {
     <div class="section">
       <div class="section-header">
         <h2>${t("invoices.title")}</h2>
-        <p>${t("invoices.desc")}</p>
+        <p>${t("invoices.desc")} <span class="result-count">${sorted.length} kayıt${globalSearchTerm ? ` — "${globalSearchTerm}"` : ""}</span></p>
       </div>
       <div class="panel-grid">
         <div class="panel-side">
@@ -1555,13 +1558,14 @@ function renderInvoices(panel) {
                 </tr>
               </thead>
               <tbody>
-                ${sorted.length ? sorted.map((i, idx) => `
+                ${pagedInvoices.length ? pagedInvoices.map((i, idx) => `
                   ${(() => {
                     const key = `${i.supplierId || "none"}|${Number(i.amountUsd || 0).toFixed(2)}`;
                     const isRecurring = (recurringMap.get(key) || 0) >= 2;
                     const tag = isRecurring ? "Recurring" : "";
+                    const isEditing = editContext.invoices && String(editContext.invoices) === String(i.id);
                     return `
-                  <tr>
+                  <tr${isEditing ? ' class="row-editing"' : ''}>
                     <td>${i.number || "-"}</td>
                     <td>${i.date || "-"}</td>
                     <td>${supplierName(i.supplierId)}</td>
@@ -1571,7 +1575,7 @@ function renderInvoices(panel) {
                     <td>${tag || "-"}</td>
                     <td>${i.fileId ? `<button class="btn" data-view="${i.fileId}">Görüntüle</button>` : "-"}</td>
                     <td>
-                      <button type="button" class="btn" data-type="invoices" data-edit="${i.id || ""}" onclick="window.__jumviEditFromBtn(this)">Düzenle</button>
+                      <button type="button" class="btn${isEditing ? ' btn-primary' : ''}" data-type="invoices" data-edit="${i.id || ""}" onclick="window.__jumviEditFromBtn(this)">${isEditing ? '✎ Düzenleniyor' : 'Düzenle'}</button>
                       <button type="button" class="btn btn-danger" data-type="invoices" data-del="${i.id || ""}" data-del-idx="${idx}" onclick="window.__jumviDeleteFromBtn(this)">Sil</button>
                     </td>
                   </tr>
@@ -1588,12 +1592,15 @@ function renderInvoices(panel) {
               </tbody>
             </table>
           </div>
+          ${!invoiceShowAll && sorted.length > PAGE_SIZE ? `<div class="load-more"><button class="btn" id="invLoadMore">Tümünü göster (${sorted.length} kayıt)</button></div>` : ""}
         </div>
       </div>
     </div>
   `;
   bindSortHandlers(panel, "invoices");
   setActiveSortHeader(panel, "invoices");
+  const invLoadMore = $("#invLoadMore");
+  if (invLoadMore) invLoadMore.onclick = () => { showAll["invoices"] = true; renderCurrentTab(); };
 
   $("#invAmount").oninput = async () => {
     const amt = parseMoney($("#invAmount").value);
@@ -1660,14 +1667,22 @@ function renderInvoices(panel) {
 
   $("#invoiceForm").onsubmit = async (e) => {
     e.preventDefault();
+    const supplierId = $("#invSupplier").value;
+    if (!supplierId && state.suppliers.length > 0) return showMsg("Tedarikçi seçin", "error");
     const amount = parseMoney($("#invAmount").value);
+    if (!amount || amount <= 0) return showMsg("Geçerli bir tutar girin", "error");
     const currency = $("#invCurrency").value;
     const date = $("#invDate").value || new Date().toISOString().slice(0,10);
+    const invNo = $("#invNo").value.trim();
+    if (invNo && !editItem) {
+      const dup = state.invoices.find((i) => i.number && i.number === invNo && i.supplierId === supplierId);
+      if (dup) showMsg(`Uyarı: ${invNo} numaralı fatura zaten kayıtlı`, "error");
+    }
     let fxRate = null;
     let amountUsd = amount;
     if (currency === "TRY") {
       fxRate = await getFxRate(date);
-      if (!fxRate) return showMsg(t("messages.error"));
+      if (!fxRate) return showMsg("Döviz kuru alınamadı. Önce tarihi seçin.", "error");
       amountUsd = amount * fxRate;
     }
     let fileId = null;
@@ -1699,8 +1714,8 @@ function renderInvoices(panel) {
     } else {
       state.invoices.push({
         id: uid(),
-        supplierId: $("#invSupplier").value,
-        number: $("#invNo").value,
+        supplierId,
+        number: invNo,
         date,
         amountOriginal: amount,
         amountCurrency: currency,
@@ -1753,6 +1768,8 @@ function renderPayments(panel) {
   const sort = getSort("payments", "date");
   const sorted = sortList(list, sort, { date: "date", amountUsd: "number", wiseRef: "text" });
   const totalUsd = sorted.reduce((sum, p) => sum + (p.amountUsd || 0), 0);
+  const paymentShowAll = showAll["payments"] || globalSearchTerm;
+  const pagedPayments = paymentShowAll ? sorted : sorted.slice(0, PAGE_SIZE);
   const recurringMap = new Map();
   sorted.forEach((p) => {
     const key = `${Number(p.amountUsd || 0).toFixed(2)}`;
@@ -1764,7 +1781,7 @@ function renderPayments(panel) {
     <div class="section">
       <div class="section-header">
         <h2>${t("payments.title")}</h2>
-        <p>${t("payments.desc")}</p>
+        <p>${t("payments.desc")} <span class="result-count">${sorted.length} kayıt${globalSearchTerm ? ` — "${globalSearchTerm}"` : ""}</span></p>
       </div>
       <div class="panel-grid">
         <div class="panel-side">
@@ -1799,13 +1816,14 @@ function renderPayments(panel) {
                 </tr>
               </thead>
               <tbody>
-                ${sorted.length ? sorted.map((p, idx) => `
+                ${pagedPayments.length ? pagedPayments.map((p, idx) => `
                   ${(() => {
                     const key = `${Number(p.amountUsd || 0).toFixed(2)}`;
                     const isRecurring = (recurringMap.get(key) || 0) >= 2;
                     const tag = isRecurring ? "Recurring" : "";
+                    const isEditing = editContext.payments && String(editContext.payments) === String(p.id);
                     return `
-                  <tr>
+                  <tr${isEditing ? ' class="row-editing"' : ''}>
                     <td>${p.date || ""}</td>
                     <td>${p.invoiceId ? (state.invoices.find(i => i.id === p.invoiceId)?.number || "-") : "Genel"}</td>
                     <td>${formatters.currency.format(p.amountUsd || 0)}</td>
@@ -1814,7 +1832,7 @@ function renderPayments(panel) {
                     <td>${tag || "-"}</td>
                     <td>${p.fileId ? `<button class="btn" data-view="${p.fileId}">Görüntüle</button>` : "-"}</td>
                     <td>
-                      <button type="button" class="btn" data-type="payments" data-edit="${p.id || ""}" onclick="window.__jumviEditFromBtn(this)">Düzenle</button>
+                      <button type="button" class="btn${isEditing ? ' btn-primary' : ''}" data-type="payments" data-edit="${p.id || ""}" onclick="window.__jumviEditFromBtn(this)">${isEditing ? '✎ Düzenleniyor' : 'Düzenle'}</button>
                       <button type="button" class="btn btn-danger" data-type="payments" data-del="${p.id || ""}" data-del-idx="${idx}" onclick="window.__jumviDeleteFromBtn(this)">Sil</button>
                     </td>
                   </tr>
@@ -1831,12 +1849,15 @@ function renderPayments(panel) {
               </tbody>
             </table>
           </div>
+          ${!paymentShowAll && sorted.length > PAGE_SIZE ? `<div class="load-more"><button class="btn" id="payLoadMore">Tümünü göster (${sorted.length} kayıt)</button></div>` : ""}
         </div>
       </div>
     </div>
   `;
   bindSortHandlers(panel, "payments");
   setActiveSortHeader(panel, "payments");
+  const payLoadMore = $("#payLoadMore");
+  if (payLoadMore) payLoadMore.onclick = () => { showAll["payments"] = true; renderCurrentTab(); };
 
   $("#payAmount").oninput = async () => {
     const amt = parseMoney($("#payAmount").value);
@@ -1893,9 +1914,10 @@ function renderPayments(panel) {
     let amountUsd = amount;
     if (currency === "TRY") {
       fxRate = await getFxRate(date);
-      if (!fxRate) return showMsg(t("messages.error"));
+      if (!fxRate) return showMsg("Döviz kuru alınamadı. Önce tarihi seçin.", "error");
       amountUsd = amount * fxRate;
     }
+    if (!amount || amount <= 0) return showMsg("Geçerli bir tutar girin", "error");
     let fileId = null;
     const file = $("#payFile").files[0];
     if (file) {
@@ -1969,7 +1991,7 @@ function renderDocuments(panel) {
     <div class="section">
       <div class="section-header">
         <h2>${t("documents.title")}</h2>
-        <p>${t("documents.desc")}</p>
+        <p>${t("documents.desc")} <span class="result-count">${sorted.length} kayıt</span></p>
       </div>
       <div class="panel-grid">
         <div class="panel-side">
@@ -2514,6 +2536,7 @@ async function uploadFile(file, category, relatedId) {
   form.append("file", file);
   form.append("category", category);
   form.append("relatedId", relatedId || "");
+  showMsg("Dosya yükleniyor...", "ok");
   try {
     const res = await fetch("/panel/api/upload", { method: "POST", body: form });
     if (!res.ok) {
@@ -2521,9 +2544,10 @@ async function uploadFile(file, category, relatedId) {
       showMsg(err?.error ? `Yükleme hatası: ${err.error}` : "Dosya yüklenemedi", "error");
       return null;
     }
+    showMsg("Dosya yüklendi", "ok");
     return await res.json();
   } catch {
-    showMsg("Dosya yüklenemedi", "error");
+    showMsg("Dosya yüklenemedi (sunucu yanıt vermedi)", "error");
     return null;
   }
 }

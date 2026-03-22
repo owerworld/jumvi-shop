@@ -434,8 +434,34 @@ body[data-theme="light"] .table-wrap th { background: rgba(0,0,0,.02); }
 .table-wrap tbody tr:hover td { background: rgba(255,255,255,.025); }
 body[data-theme="light"] .table-wrap tbody tr:hover td { background: rgba(0,0,0,.025); }
 
+/* Editing row highlight */
+.table-wrap tbody tr.row-editing td {
+  background: rgba(56,189,248,.08) !important;
+  border-left: 3px solid var(--accent);
+}
+body[data-theme="light"] .table-wrap tbody tr.row-editing td {
+  background: rgba(56,189,248,.12) !important;
+}
+
 .accent-table thead th { color: #7dd3fc; }
 body[data-theme="light"] .accent-table thead th { color: var(--accent); }
+
+/* Result count */
+.result-count {
+  font-size: 11px; font-weight: 600;
+  color: var(--accent); opacity: .85;
+  background: rgba(56,189,248,.1);
+  border: 1px solid rgba(56,189,248,.2);
+  border-radius: 99px;
+  padding: 1px 8px;
+  margin-left: 8px;
+}
+
+/* Load more */
+.load-more {
+  text-align: center;
+  padding: 12px 0 4px;
+}
 
 .table-empty {
   text-align: center; color: var(--muted);
