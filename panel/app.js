@@ -1333,6 +1333,9 @@ function renderStats() {
         plannedExpenseEditId = null;
       } else {
         state.revenueCalc.plannedExpenses.push({ id: uid(), name, amountUsd, date, status: "planned" });
+        const nEl = $("#goldScenarioName"); if (nEl) nEl.value = "";
+        const aEl = $("#goldScenarioAmount"); if (aEl) aEl.value = "";
+        const dEl = $("#goldScenarioDate"); if (dEl) dEl.value = "";
       }
       await saveState();
       renderStats();
@@ -1467,10 +1470,13 @@ function renderSuppliers(panel) {
       email: $("#supEmail").value.trim(),
       notes: $("#supNotes").value.trim()
     };
-    if (!supplier.name) return;
+    if (!supplier.name) return showMsg("Firma adı zorunlu", "error");
+    const dup = state.suppliers.find((s) => s.name.toLowerCase() === supplier.name.toLowerCase());
+    if (dup) return showMsg("Bu tedarikçi zaten kayıtlı", "error");
     state.suppliers.push(supplier);
     await saveState();
     showMsg(t("messages.saved"));
+    $("#supplierForm").reset();
     renderCurrentTab();
   };
 
@@ -1528,7 +1534,10 @@ function renderInvoices(panel) {
         <div class="panel-side">
           <form class="panel-card" id="invoiceForm">
             <div class="field"><label>Tedarikçi *</label>
-              <select id="invSupplier">${state.suppliers.map((s) => `<option value="${s.id}">${s.name}</option>`).join("")}</select>
+              <select id="invSupplier" required>
+                <option value="">— Tedarikçi Seç —</option>
+                ${state.suppliers.map((s) => `<option value="${s.id}">${s.name}</option>`).join("")}
+              </select>
             </div>
             <div class="field"><label>Fatura No</label><input id="invNo"></div>
             <div class="field"><label>Tarih</label><input type="date" id="invDate"></div>
@@ -1676,7 +1685,7 @@ function renderInvoices(panel) {
     const invNo = $("#invNo").value.trim();
     if (invNo && !editItem) {
       const dup = state.invoices.find((i) => i.number && i.number === invNo && i.supplierId === supplierId);
-      if (dup) showMsg(`Uyarı: ${invNo} numaralı fatura zaten kayıtlı`, "error");
+      if (dup) return showMsg(`Hata: ${invNo} numaralı fatura zaten kayıtlı`, "error");
     }
     let fxRate = null;
     let amountUsd = amount;
@@ -1727,6 +1736,7 @@ function renderInvoices(panel) {
     }
     await saveState();
     showMsg(t("messages.saved"));
+    if (!editItem) clearEditContext("invoices");
     renderCurrentTab();
     renderStats();
   };
@@ -1906,6 +1916,7 @@ function renderPayments(panel) {
   $("#paymentForm").onsubmit = async (e) => {
     e.preventDefault();
     const amount = parseMoney($("#payAmount").value);
+    if (!amount || amount <= 0) return showMsg("Geçerli bir tutar girin", "error");
     const currency = $("#payCurrency").value;
     const invoiceId = $("#payInvoice").value || null;
     const invoiceDate = invoiceId ? (state.invoices.find((i) => i.id === invoiceId)?.date || "") : "";
@@ -1917,7 +1928,6 @@ function renderPayments(panel) {
       if (!fxRate) return showMsg("Döviz kuru alınamadı. Önce tarihi seçin.", "error");
       amountUsd = amount * fxRate;
     }
-    if (!amount || amount <= 0) return showMsg("Geçerli bir tutar girin", "error");
     let fileId = null;
     const file = $("#payFile").files[0];
     if (file) {
@@ -1958,6 +1968,7 @@ function renderPayments(panel) {
     }
     await saveState();
     showMsg(t("messages.saved"));
+    if (!editItem) clearEditContext("payments");
     renderCurrentTab();
     renderStats();
   };
@@ -2054,6 +2065,7 @@ function renderDocuments(panel) {
     });
     await saveState();
     showMsg(t("messages.saved"));
+    $("#docForm").reset();
     renderCurrentTab();
     renderStats();
   };
@@ -2062,6 +2074,7 @@ function renderDocuments(panel) {
 }
 
 async function renderFiles(panel) {
+  panel.innerHTML = `<div class="section"><div class="section-header"><h2>${t("files.title")}</h2><p style="color:var(--muted);font-size:13px">Dosyalar yükleniyor...</p></div></div>`;
   const files = await refreshFiles();
   const parsed = parseQuery(getSearchTerm());
   const list = files.filter((f) => {
@@ -2141,7 +2154,12 @@ function renderQC(panel) {
       <div class="panel-grid">
         <div class="panel-side">
           <form class="panel-card" id="qcForm">
-            <div class="field"><label>Fatura</label><select id="qcInvoice">${state.invoices.map((i) => `<option value="${i.id}">${i.number || i.id}</option>`).join("")}</select></div>
+            <div class="field"><label>Fatura</label>
+              <select id="qcInvoice">
+                <option value="">— Fatura Seç —</option>
+                ${state.invoices.map((i) => `<option value="${i.id}">${i.number || i.id.slice(0,8)}</option>`).join("")}
+              </select>
+            </div>
             <div class="field"><label>Video (MP4/MOV)</label><input id="qcVideo" type="file"></div>
             <div class="field"><label>Fotoğraflar</label><input id="qcPhotos" type="file" multiple></div>
             <div class="field"><label>SLA (1-2 gün)</label><input id="qcSlaOk" type="checkbox"></div>
@@ -2226,6 +2244,7 @@ function renderQC(panel) {
     });
     await saveState();
     showMsg(t("messages.saved"));
+    $("#qcForm").reset();
     renderCurrentTab();
   };
   const qcFilter = $("#qcFilter");
@@ -2392,6 +2411,8 @@ function renderAmazon(panel) {
       const due = $("#launchDue").value;
       state.amazonOps.launch.items.push({ id: uid(), title, due, done: false });
       await saveState();
+      const lt = $("#launchTitle"); if (lt) lt.value = "";
+      const ld = $("#launchDue"); if (ld) ld.value = "";
       renderCurrentTab();
     };
   }
@@ -2419,6 +2440,7 @@ function renderAmazon(panel) {
       if (!exp.name) return;
       state.amazonOps.experiments.push(exp);
       await saveState();
+      ["#expName","#expStart","#expEnd","#expWinner","#expNote"].forEach((sel) => { const el = $(sel); if (el) el.value = ""; });
       renderCurrentTab();
     };
   }
@@ -2597,7 +2619,12 @@ async function deleteFile(key, opts = {}) {
 function setupTabs() {
   $$(".tab").forEach((tab) => {
     tab.onclick = () => {
+      const prev = activeTab;
       activeTab = tab.dataset.tab;
+      if (prev !== activeTab) {
+        delete showAll[prev];
+        delete showAll[activeTab];
+      }
       $$(".tab").forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
       renderCurrentTab();
