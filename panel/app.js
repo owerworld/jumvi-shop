@@ -820,20 +820,28 @@ function setupShortcuts() {
 }
 
 let previewUrl = "";
+function isMobile() {
+  return window.matchMedia("(max-width: 768px)").matches || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
 function showPreview(url) {
+  previewUrl = url;
+  const lower = url.toLowerCase();
+  const isImage = lower.includes(".png") || lower.includes(".jpg") || lower.includes(".jpeg") || lower.includes(".gif") || lower.includes(".webp");
+  if (isMobile() && !isImage) {
+    window.open(url, "_blank", "noopener");
+    return;
+  }
   const modal = $("#filePreview");
   const body = $("#previewBody");
   const openBtn = $("#previewOpenNew");
   if (!modal || !body || !openBtn) return;
-  previewUrl = url;
-  const lower = url.toLowerCase();
-  if (lower.includes(".png") || lower.includes(".jpg") || lower.includes(".jpeg") || lower.includes(".gif") || lower.includes(".webp")) {
+  if (isImage) {
     body.innerHTML = `<img src="${url}" alt="preview" />`;
   } else {
-    body.innerHTML = `<iframe src="${url}"></iframe>`;
+    body.innerHTML = `<iframe src="${url}" title="Belge önizleme"></iframe>`;
   }
   modal.classList.add("open");
-  openBtn.onclick = () => window.open(previewUrl, "_blank");
+  openBtn.onclick = () => window.open(previewUrl, "_blank", "noopener");
 }
 
 function setupPreviewModal() {
@@ -1438,14 +1446,14 @@ function renderSuppliers(panel) {
                     const open = Math.max(0, invTotal - payTotal);
                     return `
                   <tr>
-                    <td>${s.id}</td>
-                    <td>${s.name}</td>
-                    <td>${s.contact || ""}</td>
-                    <td>${s.email || ""}</td>
-                    <td>${formatters.currency.format(invTotal)}</td>
-                    <td>${formatters.currency.format(payTotal)}</td>
-                    <td>${formatters.currency.format(open)}</td>
-                    <td><button type="button" class="btn btn-danger" data-type="suppliers" data-del="${s.id || ""}" data-del-idx="${idx}" onclick="window.__jumviDeleteFromBtn(this)">Sil</button></td>
+                    <td data-label="#">${s.id}</td>
+                    <td data-label="Firma">${s.name}</td>
+                    <td data-label="Yetkili">${s.contact || ""}</td>
+                    <td data-label="E-posta">${s.email || ""}</td>
+                    <td data-label="Fatura">${formatters.currency.format(invTotal)}</td>
+                    <td data-label="Ödenen">${formatters.currency.format(payTotal)}</td>
+                    <td data-label="Açık">${formatters.currency.format(open)}</td>
+                    <td class="td-action"><button type="button" class="btn btn-danger" data-type="suppliers" data-del="${s.id || ""}" data-del-idx="${idx}" onclick="window.__jumviDeleteFromBtn(this)">Sil</button></td>
                   </tr>
                   `;
                   })()}
@@ -1575,15 +1583,15 @@ function renderInvoices(panel) {
                     const isEditing = editContext.invoices && String(editContext.invoices) === String(i.id);
                     return `
                   <tr${isEditing ? ' class="row-editing"' : ''}>
-                    <td>${i.number || "-"}</td>
-                    <td>${i.date || "-"}</td>
-                    <td>${supplierName(i.supplierId)}</td>
-                    <td>${formatters.currency.format(i.amountUsd || 0)}</td>
-                    <td>${i.status || "open"}</td>
-                    <td>${i.wiseRefMatch || (state.payments.some((p) => p.invoiceId === i.id) ? "Eşleşti" : "-")}</td>
-                    <td>${tag || "-"}</td>
-                    <td>${i.fileId ? `<button class="btn" data-view="${i.fileId}">Görüntüle</button>` : "-"}</td>
-                    <td>
+                    <td data-label="#">${i.number || "-"}</td>
+                    <td data-label="Tarih">${i.date || "-"}</td>
+                    <td data-label="Tedarikçi">${supplierName(i.supplierId)}</td>
+                    <td data-label="Tutar">${formatters.currency.format(i.amountUsd || 0)}</td>
+                    <td data-label="Durum">${i.status || "open"}</td>
+                    <td data-label="Wise">${i.wiseRefMatch || (state.payments.some((p) => p.invoiceId === i.id) ? "Eşleşti" : "-")}</td>
+                    <td data-label="Etiket">${tag || "-"}</td>
+                    <td data-label="Dosya">${i.fileId ? `<button class="btn" data-view="${i.fileId}">Görüntüle</button>` : "-"}</td>
+                    <td class="td-action">
                       <button type="button" class="btn${isEditing ? ' btn-primary' : ''}" data-type="invoices" data-edit="${i.id || ""}" onclick="window.__jumviEditFromBtn(this)">${isEditing ? '✎ Düzenleniyor' : 'Düzenle'}</button>
                       <button type="button" class="btn btn-danger" data-type="invoices" data-del="${i.id || ""}" data-del-idx="${idx}" onclick="window.__jumviDeleteFromBtn(this)">Sil</button>
                     </td>
@@ -1834,14 +1842,14 @@ function renderPayments(panel) {
                     const isEditing = editContext.payments && String(editContext.payments) === String(p.id);
                     return `
                   <tr${isEditing ? ' class="row-editing"' : ''}>
-                    <td>${p.date || ""}</td>
-                    <td>${p.invoiceId ? (state.invoices.find(i => i.id === p.invoiceId)?.number || "-") : "Genel"}</td>
-                    <td>${formatters.currency.format(p.amountUsd || 0)}</td>
-                    <td>${p.wiseRef || "-"}</td>
-                    <td>${p.invoiceId ? "Eşleşti" : "Bekliyor"}</td>
-                    <td>${tag || "-"}</td>
-                    <td>${p.fileId ? `<button class="btn" data-view="${p.fileId}">Görüntüle</button>` : "-"}</td>
-                    <td>
+                    <td data-label="Tarih">${p.date || ""}</td>
+                    <td data-label="Fatura">${p.invoiceId ? (state.invoices.find(i => i.id === p.invoiceId)?.number || "-") : "Genel"}</td>
+                    <td data-label="Tutar">${formatters.currency.format(p.amountUsd || 0)}</td>
+                    <td data-label="Wise Ref">${p.wiseRef || "-"}</td>
+                    <td data-label="Durum">${p.invoiceId ? "Eşleşti" : "Bekliyor"}</td>
+                    <td data-label="Etiket">${tag || "-"}</td>
+                    <td data-label="Dosya">${p.fileId ? `<button class="btn" data-view="${p.fileId}">Görüntüle</button>` : "-"}</td>
+                    <td class="td-action">
                       <button type="button" class="btn${isEditing ? ' btn-primary' : ''}" data-type="payments" data-edit="${p.id || ""}" onclick="window.__jumviEditFromBtn(this)">${isEditing ? '✎ Düzenleniyor' : 'Düzenle'}</button>
                       <button type="button" class="btn btn-danger" data-type="payments" data-del="${p.id || ""}" data-del-idx="${idx}" onclick="window.__jumviDeleteFromBtn(this)">Sil</button>
                     </td>
@@ -2031,11 +2039,11 @@ function renderDocuments(panel) {
               <tbody>
                 ${sorted.length ? sorted.map((d, idx) => `
                   <tr>
-                    <td>${d.title || "-"}</td>
-                    <td>${d.date || ""}</td>
-                    <td>${d.invoiceId ? (state.invoices.find(i => i.id === d.invoiceId)?.number || "-") : "-"}</td>
-                    <td>${d.fileId ? `<button class="btn" data-view="${d.fileId}">Görüntüle</button>` : "-"}</td>
-                    <td><button type="button" class="btn btn-danger" data-type="documents" data-del="${d.id || ""}" data-del-idx="${idx}" onclick="window.__jumviDeleteFromBtn(this)">Sil</button></td>
+                    <td data-label="Başlık">${d.title || "-"}</td>
+                    <td data-label="Tarih">${d.date || ""}</td>
+                    <td data-label="Fatura">${d.invoiceId ? (state.invoices.find(i => i.id === d.invoiceId)?.number || "-") : "-"}</td>
+                    <td data-label="Dosya">${d.fileId ? `<button class="btn" data-view="${d.fileId}">Görüntüle</button>` : "-"}</td>
+                    <td class="td-action"><button type="button" class="btn btn-danger" data-type="documents" data-del="${d.id || ""}" data-del-idx="${idx}" onclick="window.__jumviDeleteFromBtn(this)">Sil</button></td>
                   </tr>
                 `).join("") : `<tr><td class="table-empty" colspan="5">Sonuç yok</td></tr>`}
               </tbody>
@@ -2105,10 +2113,10 @@ async function renderFiles(panel) {
           <tbody>
             ${sorted.length ? sorted.map((f) => `
               <tr>
-                <td>${f.name}</td>
-                <td>${f.category || "-"}</td>
-                <td>${f.date || ""}</td>
-                <td>
+                <td data-label="Dosya Adı">${f.name}</td>
+                <td data-label="Kategori">${f.category || "-"}</td>
+                <td data-label="Tarih">${f.date || ""}</td>
+                <td class="td-action">
                   <button class="btn" data-view="${f.key}">Görüntüle</button>
                   <button class="btn btn-danger" data-del-file="${f.key}">Sil</button>
                 </td>
